@@ -12,6 +12,9 @@ const ProductCollection = () => {
   return (
     <section id="collection" className="py-16 relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full" style={{ background: "radial-gradient(ellipse, hsl(270 85% 60% / 0.15) 0%, transparent 70%)" }} />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[400px] rounded-full" style={{ background: "radial-gradient(ellipse, hsl(280 80% 55% / 0.12) 0%, transparent 70%)" }} />
+      <div className="absolute top-1/2 left-0 w-[500px] h-[400px] rounded-full" style={{ background: "radial-gradient(ellipse, hsl(270 80% 58% / 0.10) 0%, transparent 70%)" }} />
 
       <div className="container relative">
         <motion.div

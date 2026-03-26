@@ -1,22 +1,20 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import result1 from "@/assets/result-1.jpg";
-import result2 from "@/assets/result-2.jpg";
 
 const SHOP_URL = "https://heembyjv.com/collections/all";
 
 const results = [
   {
-    image: result1,
-    label: "Clean Fade + HEEM Styling Powder",
+    image: "https://heembyjv.com/cdn/shop/files/49E87ABB-30B8-4D5F-80B2-567F5272722F.jpg?v=1772685669&width=1200",
+    label: "Precision Lineup with THE HEEM RAZOR",
     tag: "Precision",
-    products: "Styling Powder · Aftershave Cologne · HEEM Razor",
+    products: "HEEM Razor · Aftershave Cologne · Styling Powder",
   },
   {
-    image: result2,
-    label: "Textured Crop + HEEM Sea Salt Spray",
-    tag: "Texture",
-    products: "Sea Salt Spray · Texture Comb · ANTIFRIZZ",
+    image: "https://heembyjv.com/cdn/shop/files/BB4C9DB6-0E0A-4D84-A0DE-6A64DE5FEE92.jpg?v=1772685669&width=1200",
+    label: "Detail Work — Clean Edges, Real Tools",
+    tag: "Detail",
+    products: "HEEM Razor · Texture Comb · ANTIFRIZZ",
   },
 ];
 
@@ -78,6 +76,32 @@ const TransformationsSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Real product lifestyle strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 max-w-5xl mx-auto"
+        >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              { src: "https://heembyjv.com/cdn/shop/files/FF6D4E16-3B2A-4D1F-8AA6-F457F3539F7E.jpg?v=1773819881&width=600", alt: "HEEM Wax in use" },
+              { src: "https://heembyjv.com/cdn/shop/products/image_602e2397-7b79-4e07-8a81-53fe7f15e44b.jpg?v=1763524274&width=600", alt: "HEEM Texture Comb in hand" },
+              { src: "https://heembyjv.com/cdn/shop/files/IMG-7109.jpg?v=1772673360&width=600", alt: "JV cutting with HEEM Cape" },
+              { src: "https://heembyjv.com/cdn/shop/files/2_SIDE_COMB.png?v=1764002918&width=600", alt: "HEEM Crush Comb detail" },
+            ].map((img, i) => (
+              <div key={i} className="overflow-hidden rounded-xl border border-border/30 aspect-square">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}

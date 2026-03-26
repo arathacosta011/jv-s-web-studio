@@ -22,8 +22,8 @@ const videoProductPairings = [
     result: "Refined, matte finish that looks natural all day. No shine, no crunch — just clean style.",
   },
   {
-    videoId: "dQw4w9WxXQ",
-    title: "How I Style Every Client — HEEM Wax Breakdown",
+    videoId: "hADm7QRGaJs",
+    title: "Day in the Life of a Barber Making 6 Figures",
     productName: "The HEEM Wax",
     howUsed: "JV scoops the putty-like wax, warms it between his palms, and works it through styled hair for a wet or firm textured hold depending on the client's look.",
     result: "Flexible, reworkable hold that lasts all day. No alcohol, refreshing scent, and a versatile finish from slick to textured.",

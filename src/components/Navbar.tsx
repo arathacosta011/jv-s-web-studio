@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import heemLogo from "@/assets/heem-logo.png";
+import { useCart } from "@/context/CartContext";
 
 const navLinks = [
   { label: "Why HEEM", href: "#products" },

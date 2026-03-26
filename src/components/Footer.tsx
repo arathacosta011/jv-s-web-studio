@@ -1,4 +1,5 @@
 import { Instagram, Youtube, ShoppingBag } from "lucide-react";
+import heemLogo from "@/assets/heem-logo.png";
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
       <div className="container relative">
         <div className="grid md:grid-cols-3 gap-16 mb-16">
           <div>
-            <p className="font-display text-2xl font-extrabold text-gradient-violet mb-4">HEEM</p>
+            <img src={heemLogo} alt="HEEM" className="h-12 w-auto mb-4" />
             <p className="text-sm text-muted-foreground font-body leading-[1.8]">
               Premium grooming by JV. Built in the barber chair.
               Real products. Real results.

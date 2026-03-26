@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import heemLogo from "@/assets/heem-logo.png";
 
 const navLinks = [
   { label: "Why HEEM", href: "#products" },
@@ -19,8 +20,8 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-2xl border-b border-border/50">
       <div className="container flex items-center justify-between h-16">
-        <a href="#" className="font-display text-xl font-extrabold tracking-tight text-gradient-violet">
-          HEEM
+        <a href="#" className="flex items-center">
+          <img src={heemLogo} alt="HEEM" className="h-10 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

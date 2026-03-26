@@ -6,7 +6,7 @@ import { useCart } from "@/context/CartContext";
 const navLinks = [
   { label: "Why HEEM", href: "#products" },
   { label: "Shop", href: "#collection" },
-  { label: "Watch JV Use It", href: "#video-product" },
+  { label: "In Action", href: "#video-product" },
   { label: "Results", href: "#results" },
   { label: "About JV", href: "#about" },
   { label: "Reviews", href: "#reviews" },

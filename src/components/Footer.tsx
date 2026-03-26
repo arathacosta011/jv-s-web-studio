@@ -20,7 +20,7 @@ const Footer = () => {
             <div className="flex flex-col gap-3">
               {[
                 { label: "Shop HEEM", href: "#collection" },
-                { label: "Watch JV Use It", href: "#video-product" },
+                { label: "In Action", href: "#video-product" },
                 { label: "Results", href: "#results" },
                 { label: "About JV", href: "#about" },
                 { label: "Book a Cut", href: "https://booksy.com/en-us/73285_jvkutzzz_barber-shop_san-diego", external: true },

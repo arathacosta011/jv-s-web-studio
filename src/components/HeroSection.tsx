@@ -58,7 +58,7 @@ const HeroSection = () => {
               <a href="#collection">Shop HEEM</a>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="#video-product">Watch JV Use It</a>
+              <a href="#video-product">See It In Action</a>
             </Button>
           </motion.div>
 

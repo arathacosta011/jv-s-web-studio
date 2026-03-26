@@ -123,7 +123,7 @@ const ProductDetailModal = ({ product, onClose }: Props) => {
                     <Button variant="outline" size="sm" className="w-full" asChild>
                       <a href={product.videoUrl} target="_blank" rel="noopener noreferrer">
                         <Play className="w-3.5 h-3.5" />
-                        Watch JV Use It
+                        See JV Use This
                       </a>
                     </Button>
                   )}

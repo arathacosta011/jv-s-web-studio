@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import heemLogo from "@/assets/heem-logo.png";
 
 const ShopCTA = () => {
   const { setIsOpen } = useCart();

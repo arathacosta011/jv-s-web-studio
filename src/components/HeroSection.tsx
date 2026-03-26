@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import heemLogo from "@/assets/heem-logo.png";
 
 const HeroSection = () => {
   return (

@@ -4,7 +4,7 @@ import heemLogo from "@/assets/heem-logo.png";
 
 const HeroSection = () => {
   return (
-    <section className="pt-18 pb-2 md:pt-22 md:pb-4 relative overflow-hidden">
+    <section className="pt-24 pb-2 md:pt-28 md:pb-4 relative">
       <div className="absolute inset-0 bg-noise" />
 
       <div className="relative container flex flex-col items-center text-center">

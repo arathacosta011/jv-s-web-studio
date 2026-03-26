@@ -1,8 +1,9 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ProductBenefits from "@/components/ProductBenefits";
+import ProductCollection from "@/components/ProductCollection";
+import VideoProductSection from "@/components/VideoProductSection";
 import TransformationsSection from "@/components/TransformationsSection";
-import VideoSection from "@/components/VideoSection";
 import AboutSection from "@/components/AboutSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import BookingCTA from "@/components/BookingCTA";
@@ -16,8 +17,9 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <ProductBenefits />
+      <ProductCollection />
+      <VideoProductSection />
       <TransformationsSection />
-      <VideoSection />
       <AboutSection />
       <TestimonialsSection />
       <BookingCTA />

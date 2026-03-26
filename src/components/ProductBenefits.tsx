@@ -1,30 +1,29 @@
 import { motion } from "framer-motion";
-import { Sparkles, Shield, Droplets, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import productCollection from "@/assets/product-collection.jpg";
+import { Sparkles, Shield, Droplets, Zap } from "lucide-react";
 
-const SHOP_URL = "https://heembyjv.com";
+const SHOP_URL = "https://heembyjv.com/collections/all";
 
 const benefits = [
   {
     icon: Sparkles,
-    title: "Professional Grade",
-    description: "Tested in the chair. Not a lab. Every formula earns its place in the lineup.",
+    title: "Built by a Barber",
+    description: "Every formula created and tested by JV in his own chair — not a lab, not a boardroom.",
   },
   {
     icon: Shield,
-    title: "Clean Ingredients",
-    description: "No fillers. No shortcuts. Performance-first formulas that actually work.",
+    title: "Professional Grade",
+    description: "The same products JV uses on every client. If it's not good enough for the chair, it's not HEEM.",
   },
   {
     icon: Droplets,
-    title: "Lightweight Hold",
-    description: "Natural finish. All-day hold. No crunch, no buildup, no compromise.",
+    title: "Real Performance",
+    description: "No fillers, no gimmicks. Clean ingredients engineered for hold, texture, and finish that lasts.",
   },
   {
     icon: Zap,
-    title: "Instant Results",
-    description: "See the difference from the first use. Real products for real grooming.",
+    title: "Visible Results",
+    description: "See the difference from the first use. HEEM products are part of the final look — not an afterthought.",
   },
 ];
 
@@ -42,72 +41,48 @@ const ProductBenefits = () => {
           className="text-center mb-20"
         >
           <p className="text-primary font-body text-xs tracking-[0.3em] uppercase mb-4">
-            The Collection
+            Why HEEM
           </p>
           <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold">
-            WHY <span className="text-gradient-violet">HEEM</span>
+            NOT ANOTHER <span className="text-gradient-violet">PRODUCT LINE</span>
           </h2>
-          <p className="text-muted-foreground mt-6 max-w-md mx-auto font-body leading-relaxed">
-            Built by a barber. Backed by results. Every product exists because JV
-            needed it in his own chair.
+          <p className="text-muted-foreground mt-6 max-w-lg mx-auto font-body leading-relaxed">
+            HEEM exists because JV needed products that actually perform in the chair.
+            Everything in the line earns its place — or it doesn't ship.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="grid sm:grid-cols-2 gap-4">
-            {benefits.map((benefit, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="group bg-card/80 backdrop-blur-sm border border-border/60 rounded-2xl p-7 hover:border-primary/20 transition-all duration-700 shadow-card hover:shadow-violet"
-              >
-                <div className="w-11 h-11 rounded-xl bg-primary/8 border border-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors duration-500">
-                  <benefit.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-display text-lg font-bold mb-2">{benefit.title}</h3>
-                <p className="text-sm text-muted-foreground font-body leading-relaxed">
-                  {benefit.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="absolute -inset-4 bg-glow-radial opacity-30" />
-            <div className="relative rounded-2xl overflow-hidden border border-border/40 shadow-card">
-              <img
-                src={productCollection}
-                alt="HEEM product collection"
-                loading="lazy"
-                width={1400}
-                height={1000}
-                className="w-full aspect-[4/3] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-            </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
+          {benefits.map((benefit, i) => (
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
+              key={i}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="absolute -bottom-5 left-6 right-6"
+              transition={{ delay: i * 0.1, duration: 0.6 }}
+              className="group bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl p-7 hover:border-primary/20 transition-all duration-700 shadow-card hover:shadow-violet text-center"
             >
-              <Button variant="hero" size="lg" className="w-full" asChild>
-                <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">
-                  Explore the Full Line
-                </a>
-              </Button>
+              <div className="w-12 h-12 rounded-xl bg-primary/8 border border-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/15 transition-colors duration-500">
+                <benefit.icon className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="font-display text-lg font-bold mb-2">{benefit.title}</h3>
+              <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                {benefit.description}
+              </p>
             </motion.div>
-          </motion.div>
+          ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center mt-14"
+        >
+          <Button variant="outline" size="lg" asChild>
+            <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">Explore the Full Collection</a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

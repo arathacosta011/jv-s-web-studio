@@ -397,5 +397,3 @@ const ProductCard = ({ product, index }: { product: Product; index: number }) =>
 };
 
 export default ProductCollection;
-
-import { useState } from "react";

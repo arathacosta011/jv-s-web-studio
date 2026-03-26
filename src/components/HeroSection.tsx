@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import heemLogo from "@/assets/heem-logo.png";
 
 const HeroSection = () => {
   return (
@@ -55,7 +56,7 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <Button variant="hero" size="lg" asChild>
-              <a href="#collection">Shop HEEM</a>
+              <a href="#collection" className="flex items-center gap-2">Shop <img src={heemLogo} alt="HEEM" className="h-5 w-auto brightness-0 invert sepia saturate-[10000%] hue-rotate-[260deg]" style={{ filter: "brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(260deg)" }} /></a>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="#video-product">See It In Action</a>

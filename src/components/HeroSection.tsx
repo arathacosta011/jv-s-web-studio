@@ -30,7 +30,7 @@ const HeroSection = () => {
               alt="HEEM"
               animate={{ rotateY: [0, 360] }}
               transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-              className="h-[2.5rem] sm:h-[3.2rem] md:h-[3.8rem] lg:h-[4.5rem] w-auto relative z-10"
+              className="h-[7.5rem] sm:h-[9.6rem] md:h-[11.4rem] lg:h-[13.5rem] w-auto relative z-10"
               style={{
                 filter: "drop-shadow(0 0 20px hsl(270 85% 60% / 0.4))",
               }}

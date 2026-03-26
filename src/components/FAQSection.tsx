@@ -17,42 +17,44 @@ const faqs = [
   },
   {
     q: "Where can I buy HEEM products?",
-    a: "You can shop the full HEEM collection online at heembyjv.com. Shipping is available across the US.",
+    a: "Shop the full HEEM collection online at heembyjv.com. Shipping available across the US.",
   },
   {
     q: "Are HEEM products professional-grade?",
-    a: "Yes. Every HEEM product is formulated to perform at professional barber-level. JV uses them on every client — that's the standard.",
+    a: "Yes. Every product is formulated to perform at professional barber-level. JV uses them on every client. That's the standard.",
   },
   {
     q: "Can I also book a haircut with JV?",
-    a: "Absolutely. JV still cuts daily in San Diego. Book through Booksy at the link on the site or follow @jvcutzz on Instagram for availability.",
+    a: "Absolutely. JV still cuts daily in San Diego. Book through Booksy or follow @jvcutzz on Instagram for availability.",
   },
   {
     q: "How do I follow JV and HEEM?",
-    a: "Follow @jvcutzz on Instagram and subscribe to the JVCUTZZ YouTube channel for cut content, product drops, and behind-the-scenes content.",
+    a: "Follow @jvcutzz on Instagram and subscribe to JVCUTZZ on YouTube for cuts, product drops, and behind-the-scenes content.",
   },
 ];
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-24">
-      <div className="container">
+    <section id="faq" className="py-32 bg-surface relative overflow-hidden">
+      <div className="absolute inset-0 bg-noise" />
+
+      <div className="container relative">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <p className="text-primary font-body text-sm tracking-[0.25em] uppercase mb-3">
-            Questions?
+          <p className="text-primary font-body text-xs tracking-[0.3em] uppercase mb-4">
+            Questions
           </p>
-          <h2 className="font-display text-4xl md:text-6xl font-bold">
+          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold">
             <span className="text-gradient-violet">FAQ</span>
           </h2>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="max-w-2xl mx-auto"
@@ -62,12 +64,12 @@ const FAQSection = () => {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="bg-card border border-border rounded-xl px-6 data-[state=open]:border-primary/30 transition-colors"
+                className="bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl px-7 data-[state=open]:border-primary/20 transition-all duration-500"
               >
-                <AccordionTrigger className="font-body font-semibold text-left hover:no-underline text-foreground">
+                <AccordionTrigger className="font-body font-semibold text-left hover:no-underline text-foreground text-[15px] py-6">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground font-body text-sm leading-relaxed">
+                <AccordionContent className="text-muted-foreground font-body text-sm leading-[1.8] pb-6">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

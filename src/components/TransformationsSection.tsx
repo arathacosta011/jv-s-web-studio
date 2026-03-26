@@ -6,56 +6,64 @@ import result2 from "@/assets/result-2.jpg";
 const SHOP_URL = "https://heembyjv.com";
 
 const results = [
-  { image: result1, label: "Clean Fade + HEEM Styling Powder" },
-  { image: result2, label: "Textured Top + HEEM Aftershave" },
+  { image: result1, label: "Clean Fade + HEEM Styling Powder", tag: "Precision" },
+  { image: result2, label: "Textured Crop + HEEM Aftershave", tag: "Texture" },
 ];
 
 const TransformationsSection = () => {
   return (
-    <section id="results" className="py-24">
-      <div className="container">
+    <section id="results" className="py-32 relative overflow-hidden">
+      <div className="absolute inset-0 bg-noise" />
+      <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] bg-glow-radial opacity-20" />
+
+      <div className="container relative">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <p className="text-primary font-body text-sm tracking-[0.25em] uppercase mb-3">
-            Real Results
+          <p className="text-primary font-body text-xs tracking-[0.3em] uppercase mb-4">
+            The Proof
           </p>
-          <h2 className="font-display text-4xl md:text-6xl font-bold">
-            SEE THE <span className="text-gradient-violet">DIFFERENCE</span>
+          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold">
+            SEE THE <span className="text-gradient-violet">RESULT</span>
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-lg mx-auto font-body">
+          <p className="text-muted-foreground mt-6 max-w-md mx-auto font-body leading-relaxed">
             Every cut finished with HEEM. The product is part of the result —
             not an afterthought.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {results.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-card"
+              transition={{ delay: i * 0.2, duration: 0.7 }}
+              className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card shadow-card hover:shadow-violet transition-shadow duration-700"
             >
               <div className="overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.label}
                   loading="lazy"
-                  width={800}
-                  height={800}
-                  className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
+                  width={900}
+                  height={900}
+                  className="w-full aspect-[4/5] object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <p className="text-xs text-primary uppercase tracking-widest font-body mb-2">Finished with HEEM</p>
-                <p className="text-foreground font-display text-xl font-semibold">{item.label}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+              <div className="absolute top-5 left-5">
+                <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[11px] text-primary uppercase tracking-widest font-body">
+                  {item.tag}
+                </span>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <p className="text-[11px] text-primary uppercase tracking-[0.2em] font-body mb-2">Finished with HEEM</p>
+                <p className="text-foreground font-display text-2xl font-bold">{item.label}</p>
               </div>
             </motion.div>
           ))}
@@ -65,10 +73,10 @@ const TransformationsSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-10"
+          className="text-center mt-14"
         >
           <Button variant="outline" size="lg" asChild>
-            <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">Explore the Products</a>
+            <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">Shop the Products Behind the Results</a>
           </Button>
         </motion.div>
       </div>

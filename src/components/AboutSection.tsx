@@ -69,18 +69,27 @@ const AboutSection = () => {
 
             <div className="grid grid-cols-3 gap-8">
               {[
-                { icon: Star, label: "Rated", value: "5.0★" },
-                { icon: Instagram, label: "Follow", value: "@jvcutzz" },
-                { icon: Youtube, label: "Watch", value: "JVCUTZZ" },
-              ].map((item, i) => (
-                <div key={i}>
-                  <div className="w-10 h-10 rounded-xl bg-primary/8 border border-primary/10 flex items-center justify-center mb-3">
-                    <item.icon className="w-4 h-4 text-primary" />
-                  </div>
-                  <p className="font-display text-base font-bold">{item.value}</p>
-                  <p className="text-[11px] text-muted-foreground uppercase tracking-[0.15em] mt-0.5">{item.label}</p>
-                </div>
-              ))}
+                { icon: Star, label: "Rated", value: "5.0★", href: undefined },
+                { icon: Instagram, label: "Follow", value: "@jvcutzz", href: "https://www.instagram.com/jv_dabarber/" },
+                { icon: Youtube, label: "Watch", value: "JVCUTZZ", href: "https://www.youtube.com/@JVCUTZZ" },
+              ].map((item, i) => {
+                const content = (
+                  <>
+                    <div className="w-10 h-10 rounded-xl bg-primary/8 border border-primary/10 flex items-center justify-center mb-3">
+                      <item.icon className="w-4 h-4 text-primary" />
+                    </div>
+                    <p className="font-display text-base font-bold">{item.value}</p>
+                    <p className="text-[11px] text-muted-foreground uppercase tracking-[0.15em] mt-0.5">{item.label}</p>
+                  </>
+                );
+                return item.href ? (
+                  <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                    {content}
+                  </a>
+                ) : (
+                  <div key={i}>{content}</div>
+                );
+              })}
             </div>
           </motion.div>
         </div>

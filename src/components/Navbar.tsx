@@ -4,15 +4,6 @@ import { Menu, X, ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import heemLogo from "@/assets/heem-logo.png";
 
-const navLinks = [
-  { label: "Why HEEM", href: "#products" },
-  { label: "Shop", href: "#collection" },
-  { label: "In Action", href: "#video-product" },
-  { label: "Results", href: "#results" },
-  { label: "About JV", href: "#about" },
-  { label: "Reviews", href: "#reviews" },
-];
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { totalItems, setIsOpen: setCartOpen } = useCart();
@@ -24,16 +15,10 @@ const Navbar = () => {
           <img src={heemLogo} alt="HEEM" className="h-14 w-auto" />
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-[13px] font-body text-muted-foreground hover:text-foreground transition-colors duration-300"
-            >
-              {link.label}
-            </a>
-          ))}
+        <div className="hidden md:flex items-center gap-6">
+          <a href="#collection" className="text-[13px] font-body text-muted-foreground hover:text-foreground transition-colors">
+            Shop
+          </a>
           <button
             onClick={() => setCartOpen(true)}
             className="relative text-muted-foreground hover:text-foreground transition-colors"
@@ -75,20 +60,13 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-2xl border-b border-border pb-8">
-          <div className="container flex flex-col gap-5 pt-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-base font-body text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
+        <div className="md:hidden bg-background/95 backdrop-blur-2xl border-b border-border pb-6">
+          <div className="container flex flex-col gap-4 pt-4">
+            <a href="#collection" className="text-base font-body text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>
+              Shop
+            </a>
             <Button variant="hero" size="default" asChild>
-              <a href="#collection" onClick={() => setIsOpen(false)} className="flex items-center gap-2">Shop <img src={heemLogo} alt="HEEM" className="h-5 w-auto" style={{ filter: "brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(260deg)" }} /></a>
+              <a href="#collection" onClick={() => setIsOpen(false)}>Shop Now</a>
             </Button>
           </div>
         </div>

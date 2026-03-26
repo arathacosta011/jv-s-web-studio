@@ -10,7 +10,7 @@ const ProductCollection = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductDetail | null>(null);
 
   return (
-    <section id="collection" className="py-32 relative overflow-hidden">
+    <section id="collection" className="py-16 relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
 
       <div className="container relative">
@@ -18,7 +18,7 @@ const ProductCollection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           <p className="text-primary font-body text-xs tracking-[0.3em] uppercase mb-4">
             The Full Line

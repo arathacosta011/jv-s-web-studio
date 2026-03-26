@@ -2,16 +2,16 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
+const SHOP_URL = "https://heembyjv.com";
+
 const navLinks = [
-  { label: "Transformations", href: "#transformations" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
+  { label: "Products", href: "#products" },
+  { label: "Results", href: "#results" },
+  { label: "About JV", href: "#about" },
   { label: "Videos", href: "#videos" },
   { label: "Reviews", href: "#reviews" },
   { label: "FAQ", href: "#faq" },
 ];
-
-const BOOKING_URL = "https://booksy.com/en-us/73285_jvkutzzz_barber-shop_san-diego";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,11 +19,10 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="container flex items-center justify-between h-16">
-        <a href="#" className="font-display text-2xl tracking-wider text-gradient-gold">
-          JVCUTZZ
+        <a href="#" className="font-display text-2xl font-bold tracking-tight text-gradient-violet">
+          HEEM
         </a>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -35,11 +34,10 @@ const Navbar = () => {
             </a>
           ))}
           <Button variant="hero" size="sm" asChild>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">Book Now</a>
+            <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">Shop HEEM</a>
           </Button>
         </div>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden text-foreground"
           onClick={() => setIsOpen(!isOpen)}
@@ -49,7 +47,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border pb-6">
           <div className="container flex flex-col gap-4 pt-4">
@@ -64,7 +61,7 @@ const Navbar = () => {
               </a>
             ))}
             <Button variant="hero" size="default" asChild>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">Book Now</a>
+              <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">Shop HEEM</a>
             </Button>
           </div>
         </div>

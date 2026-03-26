@@ -21,7 +21,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-2xl border-b border-border/50">
       <div className="container flex items-center justify-between h-16">
         <a href="#" className="flex items-center">
-          <img src={heemLogo} alt="HEEM" className="h-10 w-auto" />
+          <img src={heemLogo} alt="HEEM" className="h-14 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

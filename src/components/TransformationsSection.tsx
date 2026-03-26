@@ -13,11 +13,11 @@ const results = [
     productName: "THE HEEM RAZOR",
   },
   {
-    image: "https://heembyjv.com/cdn/shop/files/BB4C9DB6-0E0A-4D84-A0DE-6A64DE5FEE92.jpg?v=1772685669&width=1200",
-    label: "Detail Work — Clean Edges, Real Tools",
-    tag: "Detail",
-    products: "HEEM Razor · Texture Comb · ANTIFRIZZ",
-    productName: "The Heem ANTIFRIZZ",
+    image: "https://heembyjv.com/cdn/shop/files/IMG-7143.png?v=1772685669&width=1200",
+    label: "THE HEEM RAZOR",
+    tag: "Tools",
+    products: "Professional Straight Razor · Precision Lineups · Clean Edges",
+    productName: "THE HEEM RAZOR",
   },
 ];
 

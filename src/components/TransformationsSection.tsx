@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { ShoppingCart } from "lucide-react";
+import { products as allProducts } from "@/data/products";
 
 const results = [
   {
@@ -92,8 +93,7 @@ const TransformationsSection = () => {
 
 const ResultCard = ({ item, index }: { item: typeof results[0]; index: number }) => {
   const { addToCart } = useCart();
-  const { products: allProducts } = require("@/data/products");
-  const product = allProducts.find((p: any) => p.name === item.productName);
+  const product = allProducts.find((p) => p.name === item.productName);
 
   return (
     <motion.div

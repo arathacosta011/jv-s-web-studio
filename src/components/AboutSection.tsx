@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Star, Youtube, Instagram } from "lucide-react";
-import aboutJv from "@/assets/about-jv.jpg";
 
 const AboutSection = () => {
   return (
@@ -10,7 +9,7 @@ const AboutSection = () => {
 
       <div className="container relative">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Image */}
+          {/* Real image — JV wearing the HEEM cape during a cut */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -21,8 +20,8 @@ const AboutSection = () => {
             <div className="absolute -inset-6 bg-glow-radial opacity-20" />
             <div className="relative rounded-2xl overflow-hidden border border-border/40 shadow-card">
               <img
-                src={aboutJv}
-                alt="JV — founder of HEEM"
+                src="https://heembyjv.com/cdn/shop/files/IMG-7109.jpg?v=1772673360&width=1200"
+                alt="JV cutting a client wearing the HEEM cape"
                 loading="lazy"
                 width={800}
                 height={1024}

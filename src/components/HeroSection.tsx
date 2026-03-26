@@ -42,7 +42,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="text-muted-foreground font-body text-sm max-w-sm mx-auto mb-8"
+          className="text-muted-foreground font-body text-base md:text-lg max-w-md mx-auto mb-5"
         >
           Every product built by JV, tested in the chair, and made for results.
         </motion.p>

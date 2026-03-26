@@ -10,7 +10,7 @@ const ProductCollection = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductDetail | null>(null);
 
   return (
-    <section id="collection" className="py-32 relative overflow-hidden">
+    <section id="collection" className="py-16 relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
 
       <div className="container relative">

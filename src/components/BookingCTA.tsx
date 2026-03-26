@@ -41,7 +41,7 @@ const ShopCTA = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" asChild>
-              <a href="#collection" className="flex items-center gap-2">Shop <img src={heemLogo} alt="HEEM" className="h-5 w-auto" style={{ filter: "brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(260deg)" }} /></a>
+              <a href="#collection">Shop HEEM</a>
             </Button>
             <Button variant="outline" size="lg" onClick={() => setIsOpen(true)}>
               <ShoppingCart className="w-4 h-4" />

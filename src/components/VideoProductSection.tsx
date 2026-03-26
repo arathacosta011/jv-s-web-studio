@@ -38,8 +38,8 @@ const VideoProductSection = () => {
           >
             <div className="relative aspect-video rounded-2xl overflow-hidden border border-border/40 shadow-card bg-card">
               <iframe
-                src="https://www.youtube.com/embed/?listType=user_uploads&list=JVCUTZZ"
-                title="JV using HEEM Styling Powder during a cut"
+                src="https://www.youtube.com/embed/zG1tWVw1vvw"
+                title="The Cleanest Low Fade You'll See TODAY — JV using HEEM Styling Powder"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full"

@@ -18,7 +18,7 @@ const ProductCollection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           <p className="text-primary font-body text-xs tracking-[0.3em] uppercase mb-4">
             The Full Line

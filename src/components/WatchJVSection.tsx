@@ -56,7 +56,7 @@ const WatchJVSection = () => {
           className="text-center mb-16"
         >
           <p className="text-primary font-body text-xs tracking-[0.3em] uppercase mb-4">
-            See It In Action
+            From the Chair
           </p>
           <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold">
             SEEN IN <span className="text-gradient-violet">ACTION</span>

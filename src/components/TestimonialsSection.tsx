@@ -79,9 +79,6 @@ const TestimonialsSection = () => {
           <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold">
             WHAT THEY <span className="text-gradient-violet">SAY</span>
           </h2>
-          <p className="text-muted-foreground mt-6 font-body text-sm">
-            5.0 ★ — 35 verified reviews on Booksy
-          </p>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">

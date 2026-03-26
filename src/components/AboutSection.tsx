@@ -55,7 +55,7 @@ const AboutSection = () => {
               MEET <span className="text-gradient-violet">JV</span>
             </h2>
             <p className="text-muted-foreground font-body leading-[1.8] mb-6 text-[15px]">
-              JV started cutting hair as a kid — learning the craft before most people
+              Jose Velasco — known as JV — started cutting hair as a kid, learning the craft before most people
               pick up their first job. What began in a living room with a wooden chair
               became one of San Diego's most respected names in barbering.
             </p>

@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "Who is behind HEEM?",
-    a: "HEEM is created by JV — a professional barber based in San Diego. Every product is developed and tested in his own chair on real clients before it ships.",
+    a: "HEEM is created by Jose Velasco, known as JV — a professional barber based in San Diego. Every product is developed and tested in his own chair on real clients before it ships.",
   },
   {
     q: "Where can I buy HEEM products?",

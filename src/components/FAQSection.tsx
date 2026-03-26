@@ -9,23 +9,31 @@ import {
 const faqs = [
   {
     q: "What products does HEEM offer?",
-    a: "The HEEM collection includes styling powder, aftershave, a premium barber cape, a custom razor, and more. Everything a real grooming routine needs.",
+    a: "The HEEM collection includes styling powder, sea salt spray, pomade 2.0, wax, antifrizz, aftershave cologne, professional shears, razors, combs, capes, and curated bundles. Everything for a complete grooming setup.",
   },
   {
     q: "Who is behind HEEM?",
-    a: "HEEM is created by JV — a professional barber based in San Diego. Every product is developed and tested in his own chair on real clients.",
+    a: "HEEM is created by JV — a professional barber based in San Diego. Every product is developed and tested in his own chair on real clients before it ships.",
   },
   {
     q: "Where can I buy HEEM products?",
-    a: "Shop the full HEEM collection online at heembyjv.com. Shipping available across the US.",
+    a: "Shop the full HEEM collection at heembyjv.com. Shipping available across the US.",
   },
   {
     q: "Are HEEM products professional-grade?",
-    a: "Yes. Every product is formulated to perform at professional barber-level. JV uses them on every client. That's the standard.",
+    a: "Yes. Every product is formulated to perform at professional barber-level. JV uses them on every client — that's the standard.",
+  },
+  {
+    q: "What's the best product to start with?",
+    a: "The HEEM Styling Powder is the #1 seller and the product JV uses on every single cut. If you're new to HEEM, start there.",
+  },
+  {
+    q: "Do you offer bundles?",
+    a: "Yes — The Heem Bundle ($160, save $40), The Flow Combo ($42.99), The Texture Combo ($40), and The Powder Pack ($80) are all available.",
   },
   {
     q: "Can I also book a haircut with JV?",
-    a: "Absolutely. JV still cuts daily in San Diego. Book through Booksy or follow @jvcutzz on Instagram for availability.",
+    a: "Absolutely. JV still cuts daily in San Diego. Book through Booksy or follow @jvcutzz on Instagram.",
   },
   {
     q: "How do I follow JV and HEEM?",

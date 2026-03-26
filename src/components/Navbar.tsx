@@ -2,13 +2,14 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
-const SHOP_URL = "https://heembyjv.com";
+const SHOP_URL = "https://heembyjv.com/collections/all";
 
 const navLinks = [
-  { label: "Products", href: "#products" },
+  { label: "Why HEEM", href: "#products" },
+  { label: "Shop", href: "#collection" },
+  { label: "In Action", href: "#video-product" },
   { label: "Results", href: "#results" },
-  { label: "About", href: "#about" },
-  { label: "Videos", href: "#videos" },
+  { label: "About JV", href: "#about" },
   { label: "Reviews", href: "#reviews" },
 ];
 

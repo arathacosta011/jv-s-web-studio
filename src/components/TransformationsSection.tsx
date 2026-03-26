@@ -3,18 +3,28 @@ import { Button } from "@/components/ui/button";
 import result1 from "@/assets/result-1.jpg";
 import result2 from "@/assets/result-2.jpg";
 
-const SHOP_URL = "https://heembyjv.com";
+const SHOP_URL = "https://heembyjv.com/collections/all";
 
 const results = [
-  { image: result1, label: "Clean Fade + HEEM Styling Powder", tag: "Precision" },
-  { image: result2, label: "Textured Crop + HEEM Aftershave", tag: "Texture" },
+  {
+    image: result1,
+    label: "Clean Fade + HEEM Styling Powder",
+    tag: "Precision",
+    products: "Styling Powder · Aftershave Cologne · HEEM Razor",
+  },
+  {
+    image: result2,
+    label: "Textured Crop + HEEM Sea Salt Spray",
+    tag: "Texture",
+    products: "Sea Salt Spray · Texture Comb · ANTIFRIZZ",
+  },
 ];
 
 const TransformationsSection = () => {
   return (
     <section id="results" className="py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
-      <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] bg-glow-radial opacity-20" />
+      <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] bg-glow-radial opacity-15" />
 
       <div className="container relative">
         <motion.div
@@ -30,8 +40,7 @@ const TransformationsSection = () => {
             SEE THE <span className="text-gradient-violet">RESULT</span>
           </h2>
           <p className="text-muted-foreground mt-6 max-w-md mx-auto font-body leading-relaxed">
-            Every cut finished with HEEM. The product is part of the result —
-            not an afterthought.
+            Every cut finished with HEEM. The product is part of the result.
           </p>
         </motion.div>
 
@@ -62,8 +71,9 @@ const TransformationsSection = () => {
                 </span>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-8">
-                <p className="text-[11px] text-primary uppercase tracking-[0.2em] font-body mb-2">Finished with HEEM</p>
-                <p className="text-foreground font-display text-2xl font-bold">{item.label}</p>
+                <p className="text-[10px] text-primary uppercase tracking-[0.2em] font-body mb-2">Products Used</p>
+                <p className="text-foreground font-display text-2xl font-bold mb-1">{item.label}</p>
+                <p className="text-xs text-muted-foreground font-body">{item.products}</p>
               </div>
             </motion.div>
           ))}

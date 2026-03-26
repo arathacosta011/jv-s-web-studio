@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Play } from "lucide-react";
 
 const SHOP_URL = "https://heembyjv.com";
 
@@ -12,12 +12,8 @@ type Product = {
   image: string;
   url: string;
   category: "styling" | "tools" | "bundles" | "accessories";
-  howUsed: {
-    when: string;
-    how: string;
-    result: string;
-    why: string;
-  };
+  description: string;
+  videoUrl?: string;
 };
 
 const products: Product[] = [
@@ -27,12 +23,8 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/stylingg_powdeeer_1.png?v=1763406613&width=533",
     url: "https://heembyjv.com/products/heem-styling-powder-1",
     category: "styling",
-    howUsed: {
-      when: "After the cut is done, as the final styling step.",
-      how: "Tap a small amount into your hands, rub together, and work through the top and sides for volume and texture.",
-      result: "Matte finish with natural volume. Hair looks fuller, textured, and styled without looking 'product-heavy.'",
-      why: "It's the secret weapon behind JV's signature textured finishes. Lightweight, invisible hold.",
-    },
+    description: "Are you tired of straight flat hair? Its time to level Up, with The New Heem Styling Powder you can switch up your hair style in multiple way's by adding volume and texture. Save time and money with The Heem Product's. If you get The Heem Powder might as well just get the Heem comb with it goes hand in hand like PB & J.",
+    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
   },
   {
     name: "HEEM Sea Salt Spray",
@@ -40,12 +32,8 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/cecial.png?v=1764273503&width=533",
     url: "https://heembyjv.com/products/heem-sea-salt-spray",
     category: "styling",
-    howUsed: {
-      when: "On damp or dry hair before styling.",
-      how: "Spray 3-5 pumps evenly through hair, then style with your hands or a blow dryer.",
-      result: "Natural wave and texture with beachy, lived-in movement.",
-      why: "Adds grip and body so hair holds shape all day without stiffness.",
-    },
+    description: "The HEEM Sea Salt Spray adds natural wave, texture, and body to any hair type. Spray it on damp or dry hair before styling for that beachy, lived-in movement that holds all day without stiffness.",
+    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
   },
   {
     name: "The Heem Pomade 2.0",
@@ -53,12 +41,8 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/POMADEEEE_1.png?v=1763615382&width=533",
     url: "https://heembyjv.com/products/the-heem-pomade",
     category: "styling",
-    howUsed: {
-      when: "After blow drying or on towel-dried hair.",
-      how: "Scoop a dime-sized amount, emulsify between palms, and work through hair back to front.",
-      result: "Medium-to-strong hold with a clean, natural shine.",
-      why: "Perfect for slick-backs, side parts, and polished looks that need to stay put.",
-    },
+    description: "Effortlessly refined. Embrace a natural allure with our New Heem Matt Finish Pomade. Premium formula delivers a medium weight hold and a sleek, non-shiny texture. Perfect for defining your style and maintaining a polished look throughout the day. Embrace sophistication. Embrace confidence. Embrace the Matt Finish Pomade, with HEEM.",
+    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
   },
   {
     name: "The HEEM Wax",
@@ -66,12 +50,8 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/584343BB-DD7F-45D7-B098-A8A180FBF48C.jpg?v=1773819881&width=533",
     url: "https://heembyjv.com/products/the-heem-gel-wax",
     category: "styling",
-    howUsed: {
-      when: "On dry or slightly damp hair for maximum control.",
-      how: "Warm a small amount between fingers and apply to areas that need definition and hold.",
-      result: "Strong hold with a subtle sheen. Locks texture and shape in place.",
-      why: "When you need your style to last through the day without re-touching.",
-    },
+    description: "The Heem Wax brings refreshing smell and feel to your hair. Whether you want a wet look or a firm look this is the right choice for you. The wax is like putty, it can be used to texture, hold, and style in many different ways. This Products works on all hair types and is made with No Alcohol. The refreshing gel will bring positivity and good energy to overcome the day.",
+    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
   },
   {
     name: "The Heem ANTIFRIZZ",
@@ -79,12 +59,8 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/antifrizz.png?v=1763605414&width=533",
     url: "https://heembyjv.com/products/the-heem-antifrizz",
     category: "styling",
-    howUsed: {
-      when: "On damp hair before blow drying, or as a finishing serum.",
-      how: "Apply a small amount through mid-lengths and ends. Can be used daily.",
-      result: "Smooth, frizz-free hair with natural movement and shine.",
-      why: "Tames flyaways and rough texture without weighing hair down.",
-    },
+    description: "The Heem® ANTIFRIZZ will hydrate your hair and give it a soft wet look to bring your hair to life. Made to give the hair waviness and activate curls, enriched with krafina, controls frizz without leaving heavy hair and Intensifies the brightness. Protected, shiny and frizz-controlled hair, all day long.",
+    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
   },
   {
     name: "The Heem Aftershave Cologne",
@@ -92,12 +68,8 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/TOGETHER.png?v=1763406397&width=533",
     url: "https://heembyjv.com/products/the-heem-aftershave-cologne",
     category: "styling",
-    howUsed: {
-      when: "Right after a fresh fade or shave.",
-      how: "Splash or dab onto freshly cut skin — neck, sideburns, and hairline.",
-      result: "Cools, soothes, and leaves a clean, premium scent.",
-      why: "Closes pores, reduces irritation, and finishes the cut with that barbershop-fresh feeling.",
-    },
+    description: "The Heem aftershave cologne brings a refreshing feel and smell when sprayed, apply after a fresh haircut or a clean shave for a crisp feeling. Made with quality for the best scents. Had to cook it up in the lab like Rick n Morty. Made from high-quality, natural ingredients that are safe and gentle on the skin. Free from harsh chemicals and synthetic fragrances.",
+    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
   },
   {
     name: "THE HEEM RAZOR",
@@ -105,12 +77,8 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/IMG-7143.png?v=1772685669&width=533",
     url: "https://heembyjv.com/products/heem-razor-holder",
     category: "tools",
-    howUsed: {
-      when: "During the lineup and detail work on every cut.",
-      how: "Load a fresh blade, hold at an angle, and use for precision edges and clean outlines.",
-      result: "Razor-sharp lines and surgical-clean edges.",
-      why: "JV's go-to for every lineup. Built for precision and daily professional use.",
-    },
+    description: "Experience precision with the HEEM Straight Razor, designed for barbers who demand clean, sharp results. Crafted with high-quality materials and a razor-sharp blade, it delivers smooth, controlled detailing for lineups, tapers, and finishing touches. Built for balance, durability, and professional performance.",
+    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
   },
   {
     name: "THE HEEM CAPE",
@@ -119,12 +87,8 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/IMG-9783.png?v=1763353574&width=533",
     url: "https://heembyjv.com/products/the-heem-cape",
     category: "tools",
-    howUsed: {
-      when: "Every cut, every client.",
-      how: "Snap it on before the cut. Water-resistant, hair-repellent, and easy to clean.",
-      result: "Professional look and feel. Keeps clients clean and comfortable.",
-      why: "The cape JV uses on every single client. Durable, premium, and branded.",
-    },
+    description: "BEST SIZE, BEST COLORS, BEST FABRIC, ITS HEEM. Available in Purple, Blue, Black, and White. The cape JV uses on every single client. Water-resistant, hair-repellent, and easy to clean.",
+    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
   },
   {
     name: "The Gold HEEM Comb",
@@ -132,12 +96,7 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/Gcomb_compressed.png?v=1763406572&width=533",
     url: "https://heembyjv.com/products/the-gold-heem-comb",
     category: "tools",
-    howUsed: {
-      when: "During and after styling.",
-      how: "Use to distribute product evenly and create clean parts or directional flow.",
-      result: "Smooth, even styling with precision control.",
-      why: "A signature gold finish comb that looks as good as it works.",
-    },
+    description: "The signature Gold HEEM Comb. Use to distribute product evenly and create clean parts or directional flow. Looks as good as it works.",
   },
   {
     name: "THE HEEM COMB 2.0",
@@ -145,12 +104,7 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/2.0_COMB.png?v=1763962660&width=533",
     url: "https://heembyjv.com/products/the-heem-comb-2-0",
     category: "tools",
-    howUsed: {
-      when: "For everyday styling and detangling.",
-      how: "Comb through damp or dry hair. Works with all HEEM styling products.",
-      result: "Smooth, snag-free results with balanced tooth spacing.",
-      why: "Upgraded design for better grip and smoother glide.",
-    },
+    description: "Upgraded design for better grip and smoother glide. Works with all HEEM styling products on damp or dry hair. Balanced tooth spacing for snag-free results.",
   },
   {
     name: "The Heem Texture Comb",
@@ -158,12 +112,8 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/BCOMP.png?v=1763524317&width=533",
     url: "https://heembyjv.com/products/heem-texture-comb",
     category: "tools",
-    howUsed: {
-      when: "After cutting, during the texturizing step.",
-      how: "Run through top sections to break up weight and add movement.",
-      result: "Natural-looking texture and flow that feels effortless.",
-      why: "The comb JV uses to create his signature textured tops.",
-    },
+    description: "The comb JV uses to create his signature textured tops. Run through top sections to break up weight and add natural-looking movement. Goes hand in hand with the Styling Powder.",
+    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
   },
   {
     name: "The Heem Crush",
@@ -171,12 +121,7 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/2_curh_combs.png?v=1764002918&width=533",
     url: "https://heembyjv.com/products/the-heem-crush",
     category: "tools",
-    howUsed: {
-      when: "Post-cut to add choppy, deconstructed texture.",
-      how: "Crush through styled hair to break up uniform lines.",
-      result: "Undone, editorial-style texture with modern movement.",
-      why: "Adds that lived-in look that's impossible to fake with just scissors.",
-    },
+    description: "Comb and a brush. Crush through styled hair to break up uniform lines for that undone, editorial-style texture with modern movement.",
   },
   {
     name: "The HEEM Shear Pack",
@@ -185,12 +130,7 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/IMG-7141.jpg?v=1772684657&width=533",
     url: "https://heembyjv.com/products/the-heem-shear-pack",
     category: "tools",
-    howUsed: {
-      when: "For professional cutting — the main tool of the trade.",
-      how: "Premium shears for point cutting, slide cutting, and precision work.",
-      result: "Clean, sharp cuts with professional-grade control.",
-      why: "The exact shears JV uses in his chair. Built for barbers who take their craft seriously.",
-    },
+    description: "The exact shears JV uses in his chair. Premium professional shears for point cutting, slide cutting, and precision work. Built for barbers who take their craft seriously.",
   },
   {
     name: "THE HEEM SKULLY",
@@ -198,12 +138,7 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/IMG-3725.png?v=1769144746&width=533",
     url: "https://heembyjv.com/products/the-heem-skully",
     category: "accessories",
-    howUsed: {
-      when: "Anytime — rep the brand.",
-      how: "Pull it on. Simple.",
-      result: "Clean look that represents the HEEM lifestyle.",
-      why: "Premium branded skully for the culture.",
-    },
+    description: "Premium branded skully for the culture. Rep HEEM anywhere you go.",
   },
   {
     name: "Heem Powder Pack",
@@ -212,12 +147,7 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/hereeeem.png?v=1763406553&width=533",
     url: "https://heembyjv.com/products/heem-pack",
     category: "bundles",
-    howUsed: {
-      when: "When you want to stock up on the #1 seller.",
-      how: "Multiple bottles of HEEM Styling Powder at a discounted bundle price.",
-      result: "Never run out of the product that finishes every cut.",
-      why: "Best value for the product JV uses most. Perfect for barbers or daily users.",
-    },
+    description: "Stock up on the #1 seller. Multiple bottles of HEEM Styling Powder at a discounted bundle price. Never run out of the product that finishes every cut. Perfect for barbers or daily users.",
   },
   {
     name: "The Flow Combo",
@@ -226,12 +156,7 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/FRIZZ_COMBOI.png?v=1764087076&width=533",
     url: "https://heembyjv.com/products/untitled-nov19_21-48",
     category: "bundles",
-    howUsed: {
-      when: "For the full styling routine in one pack.",
-      how: "Combo of products designed to work together for flow and texture.",
-      result: "Complete styling system for natural, textured looks.",
-      why: "Curated by JV — everything you need in one box.",
-    },
+    description: "Curated by JV — everything you need in one box. Combo of products designed to work together for flow and texture. Complete styling system for natural, textured looks.",
   },
   {
     name: "The Heem Texture Combo",
@@ -240,12 +165,7 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/HEEM_COMBO.png?v=1763406332&width=533",
     url: "https://heembyjv.com/products/the-heem-texture-combo",
     category: "bundles",
-    howUsed: {
-      when: "When you want the full texture toolkit.",
-      how: "Includes texture tools and styling products designed to work together.",
-      result: "Maximum texture and movement with professional results.",
-      why: "The exact combo JV uses for his most popular textured cuts.",
-    },
+    description: "The exact combo JV uses for his most popular textured cuts. Includes texture tools and styling products designed to work together for maximum texture and movement.",
   },
   {
     name: "The Heem Bundle",
@@ -254,12 +174,7 @@ const products: Product[] = [
     image: "https://heembyjv.com/cdn/shop/files/fixed_bundle_bf3d6c6d-9905-434a-8904-059f43ba4f87.jpg?v=1770447985&width=533",
     url: "https://heembyjv.com/products/the-heem-bundle",
     category: "bundles",
-    howUsed: {
-      when: "When you want everything. The full HEEM experience.",
-      how: "Complete collection of HEEM's core products at the best possible price.",
-      result: "Every product JV uses, in one pack. Full professional setup.",
-      why: "The ultimate value pack. Save $40 and get the entire lineup.",
-    },
+    description: "All products for a Heem Deal. HEEM POWDER, HEEM WAX, HEEM GEL, HEEM SEA SALT, HEEM ANTIFRIZZ, HEEM POMADE, HEEM AFTERSHAVE BLUE, HEEM AFTERSHAVE GREEN, HEEM GOLD COMB, HEEM BLACK COMB, HEEM CRUSH, HEEM COMB 2.0. Save $40 and get the entire lineup.",
   },
 ];
 
@@ -358,37 +273,40 @@ const ProductCard = ({ product, index }: { product: Product; index: number }) =>
           )}
         </div>
 
-        <Button variant="hero" size="sm" className="w-full mb-3" asChild>
+        {/* Shop button — links to real Shopify store */}
+        <Button variant="hero" size="sm" className="w-full mb-2" asChild>
           <a href={product.url} target="_blank" rel="noopener noreferrer">
             <ExternalLink className="w-3.5 h-3.5" />
             Shop Now
           </a>
         </Button>
 
+        {/* Watch video button — links to JV's YouTube */}
+        {product.videoUrl && (
+          <Button variant="outline" size="sm" className="w-full mb-3" asChild>
+            <a href={product.videoUrl} target="_blank" rel="noopener noreferrer">
+              <Play className="w-3.5 h-3.5" />
+              Watch JV Use It
+            </a>
+          </Button>
+        )}
+
         <button
           onClick={() => setShowDetails(!showDetails)}
           className="w-full text-[11px] text-muted-foreground hover:text-primary transition-colors font-body uppercase tracking-wider py-1"
         >
-          {showDetails ? "Hide Details ↑" : "How It's Used ↓"}
+          {showDetails ? "Hide Details ↑" : "Product Details ↓"}
         </button>
 
         {showDetails && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
-            className="mt-3 pt-3 border-t border-border/40 space-y-3"
+            className="mt-3 pt-3 border-t border-border/40"
           >
-            {[
-              { label: "When", value: product.howUsed.when },
-              { label: "How", value: product.howUsed.how },
-              { label: "Result", value: product.howUsed.result },
-              { label: "Why", value: product.howUsed.why },
-            ].map((item) => (
-              <div key={item.label}>
-                <p className="text-[10px] text-primary uppercase tracking-widest font-body mb-0.5">{item.label}</p>
-                <p className="text-xs text-muted-foreground font-body leading-relaxed">{item.value}</p>
-              </div>
-            ))}
+            <p className="text-xs text-muted-foreground font-body leading-relaxed">
+              {product.description}
+            </p>
           </motion.div>
         )}
       </div>

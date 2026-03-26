@@ -9,7 +9,7 @@ const AboutSection = () => {
 
       <div className="container relative">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Real photo of JV from Booksy profile */}
+          {/* Real HD photo of JV from SalonTonight */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -20,11 +20,11 @@ const AboutSection = () => {
             <div className="absolute -inset-6 bg-glow-radial opacity-20" />
             <div className="relative rounded-2xl overflow-hidden border border-border/40 shadow-card">
               <img
-                src="https://d2zdpiztbgorvt.cloudfront.net/region1/us/762973/biz_photo/9aa8c5e011a540c380bd31c94dfd7f-jv-cutzz-biz-photo-dfd5099b0d754a539cff5a59974384-booksy.jpeg?size=640x427"
+                src="https://www.salontonight.com/assets/73285/392d859d-9c98-4497-b1e8-250e0e0e2025.jpg"
                 alt="JV — founder of HEEM, professional barber in San Diego"
                 loading="lazy"
                 width={800}
-                height={600}
+                height={1024}
                 className="w-full aspect-[3/4] object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />

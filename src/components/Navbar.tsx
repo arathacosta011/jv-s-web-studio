@@ -3,8 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
-const SHOP_URL = "https://heembyjv.com/collections/all";
-
 const navLinks = [
   { label: "Why HEEM", href: "#products" },
   { label: "Shop", href: "#collection" },
@@ -42,13 +40,13 @@ const Navbar = () => {
           >
             <ShoppingCart className="w-5 h-5" />
             {totalItems > 0 && (
-              <span className="absolute -top-2 -right-2 w-4.5 h-4.5 min-w-[18px] bg-primary text-primary-foreground text-[10px] font-bold rounded-full flex items-center justify-center">
+              <span className="absolute -top-2 -right-2 min-w-[18px] bg-primary text-primary-foreground text-[10px] font-bold rounded-full flex items-center justify-center px-1">
                 {totalItems}
               </span>
             )}
           </button>
           <Button variant="hero" size="sm" asChild>
-            <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">Shop Now</a>
+            <a href="#collection">Shop Now</a>
           </Button>
         </div>
 
@@ -89,7 +87,7 @@ const Navbar = () => {
               </a>
             ))}
             <Button variant="hero" size="default" asChild>
-              <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">Shop HEEM</a>
+              <a href="#collection" onClick={() => setIsOpen(false)}>Shop HEEM</a>
             </Button>
           </div>
         </div>

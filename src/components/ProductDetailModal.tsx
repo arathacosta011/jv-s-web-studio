@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { X, ExternalLink, ShoppingCart, Play } from "lucide-react";
+import { X, ShoppingCart, Play } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 export type ProductDetail = {
@@ -118,12 +118,6 @@ const ProductDetailModal = ({ product, onClose }: Props) => {
                   <Button variant="hero" size="lg" className="w-full" onClick={handleAddToCart}>
                     <ShoppingCart className="w-4 h-4" />
                     Add to Cart
-                  </Button>
-                  <Button variant="outline" size="lg" className="w-full" asChild>
-                    <a href={product.url} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4" />
-                      Buy Now on HEEM Store
-                    </a>
                   </Button>
                   {product.videoUrl && (
                     <Button variant="outline" size="sm" className="w-full" asChild>

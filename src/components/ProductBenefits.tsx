@@ -2,8 +2,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Sparkles, Shield, Droplets, Zap } from "lucide-react";
 
-const SHOP_URL = "https://heembyjv.com/collections/all";
-
 const benefits = [
   {
     icon: Sparkles,
@@ -80,7 +78,7 @@ const ProductBenefits = () => {
           className="text-center mt-14"
         >
           <Button variant="outline" size="lg" asChild>
-            <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">Explore the Full Collection</a>
+            <a href="#collection">Explore the Collection</a>
           </Button>
         </motion.div>
       </div>

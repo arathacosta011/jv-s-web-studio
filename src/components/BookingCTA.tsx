@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-
-const SHOP_URL = "https://heembyjv.com";
+import { ShoppingCart } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 
 const ShopCTA = () => {
+  const { setIsOpen } = useCart();
+
   return (
     <section className="py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
@@ -26,7 +27,7 @@ const ShopCTA = () => {
             viewport={{ once: true }}
             className="w-20 h-20 rounded-full bg-primary/8 border border-primary/15 flex items-center justify-center mx-auto mb-10 glow-violet"
           >
-            <ArrowRight className="w-8 h-8 text-primary" />
+            <ShoppingCart className="w-8 h-8 text-primary" />
           </motion.div>
           <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 leading-[0.92]">
             READY TO
@@ -39,14 +40,11 @@ const ShopCTA = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" asChild>
-              <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">
-                Shop HEEM Now
-              </a>
+              <a href="#collection">Shop HEEM</a>
             </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="https://www.youtube.com/@JVCUTZZ" target="_blank" rel="noopener noreferrer">
-                Watch It In Use
-              </a>
+            <Button variant="outline" size="lg" onClick={() => setIsOpen(true)}>
+              <ShoppingCart className="w-4 h-4" />
+              View Cart
             </Button>
           </div>
         </motion.div>

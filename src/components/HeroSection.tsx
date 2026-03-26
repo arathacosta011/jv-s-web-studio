@@ -1,12 +1,9 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
-const SHOP_URL = "https://heembyjv.com";
-
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Real hero image from HEEM store */}
       <div className="absolute inset-0">
         <img
           src="https://heembyjv.com/cdn/shop/files/fixed_bundle_bf3d6c6d-9905-434a-8904-059f43ba4f87.jpg?v=1770447985&width=2000"
@@ -58,16 +55,13 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <Button variant="hero" size="lg" asChild>
-              <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">
-                Shop HEEM
-              </a>
+              <a href="#collection">Shop HEEM</a>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="#results">See the Results</a>
+              <a href="#video-product">Watch JV Use It</a>
             </Button>
           </motion.div>
 
-          {/* Trust strip */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

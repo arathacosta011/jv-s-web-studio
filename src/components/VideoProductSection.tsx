@@ -87,9 +87,10 @@ const VideoProductSection = () => {
               <p className="font-display text-3xl font-extrabold text-gradient-violet mb-4">$15.00</p>
 
               <p className="text-muted-foreground font-body text-[15px] leading-[1.8] mb-6">
-                This is the product JV reaches for on every single client. The HEEM Styling Powder
-                creates natural volume, matte texture, and invisible hold. It's what makes the
-                difference between a good cut and a cut that looks like it belongs on Instagram.
+                In this tutorial, JV walks through one of his cleanest low fades — and HEEM Styling Powder
+                is the final step that ties it all together. Watch him tap the powder, work it through
+                the top, and take the cut from fresh to finished. This is the product he reaches
+                for on every single client.
               </p>
 
               {/* How It's Used */}
@@ -98,10 +99,10 @@ const VideoProductSection = () => {
                 <div className="divider-glow" />
 
                 {[
-                  { label: "When", text: "Applied as the final step after cutting and blow drying." },
-                  { label: "How", text: "JV taps a small amount into his hands, rubs them together, and works the powder through the top for volume and texture." },
-                  { label: "Result", text: "The hair goes from flat and freshly-cut to full, textured, and styled — with zero visible product." },
-                  { label: "Why It Matters", text: "This is the finishing move that turns a haircut into a transformation. It's lightweight, invisible, and lasts all day." },
+                  { label: "When", text: "Applied as the final step after the low fade is cut and blow dried." },
+                  { label: "How", text: "JV taps a small amount into his hands, rubs them together, and works the powder through the top for volume and natural texture." },
+                  { label: "Result", text: "The hair goes from flat and freshly-cut to full, textured, and styled — with zero visible product. The fade looks sharper because the top has shape." },
+                  { label: "Why It Matters", text: "This is the finishing move that turns a low fade into a transformation. Lightweight, invisible, and lasts all day without re-touching." },
                 ].map((item) => (
                   <div key={item.label}>
                     <p className="text-[10px] text-primary uppercase tracking-[0.2em] font-body mb-1">{item.label}</p>

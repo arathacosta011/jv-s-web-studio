@@ -88,7 +88,7 @@ const Navbar = () => {
               </a>
             ))}
             <Button variant="hero" size="default" asChild>
-              <a href="#collection" onClick={() => setIsOpen(false)}>Shop HEEM</a>
+              <a href="#collection" onClick={() => setIsOpen(false)} className="flex items-center gap-2">Shop <img src={heemLogo} alt="HEEM" className="h-5 w-auto" style={{ filter: "brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(260deg)" }} /></a>
             </Button>
           </div>
         </div>

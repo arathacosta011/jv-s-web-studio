@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Can I also book a haircut with JV?",
-    a: "Absolutely. JV still cuts daily in San Diego. Book through Booksy or follow @jvcutzz on Instagram.",
+    a: 'booksy',
   },
   {
     q: "How do I follow JV and HEEM?",
@@ -78,7 +78,21 @@ const FAQSection = () => {
                   {faq.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground font-body text-sm leading-[1.8] pb-6">
-                  {faq.a}
+                  {faq.a === 'booksy' ? (
+                    <>
+                      Absolutely. JV still cuts daily in San Diego.{' '}
+                      <a
+                        href="https://booksy.com/en-us/391836_jv-cutzz_barber-shop_95498_san-diego"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
+                      >
+                        Book with JV on Booksy →
+                      </a>
+                    </>
+                  ) : (
+                    faq.a
+                  )}
                 </AccordionContent>
               </AccordionItem>
             ))}

@@ -8,34 +8,34 @@ import {
 
 const faqs = [
   {
-    q: "How do I book an appointment?",
-    a: "You can book directly through Booksy using the 'Book Now' button on this site. Pick your service, choose your time, and you're locked in.",
+    q: "What products does HEEM offer?",
+    a: "The HEEM collection includes styling powder, aftershave, a premium barber cape, a custom razor, and more. Everything a real grooming routine needs.",
   },
   {
-    q: "Where is JVCUTZZ located?",
-    a: "JV is based in San Diego, CA — 4252 40th St, San Diego, 92105. Easy to find, plenty of parking nearby.",
+    q: "Who is behind HEEM?",
+    a: "HEEM is created by JV — a professional barber based in San Diego. Every product is developed and tested in his own chair on real clients.",
   },
   {
-    q: "How long does a haircut take?",
-    a: "Most services take about 1 hour. JV doesn't rush — every detail matters, and you'll leave looking right.",
+    q: "Where can I buy HEEM products?",
+    a: "You can shop the full HEEM collection online at heembyjv.com. Shipping is available across the US.",
   },
   {
-    q: "Do you do designs?",
-    a: "Yes. The Haircut & Design service includes custom design work. Bring a reference or let JV create something original.",
+    q: "Are HEEM products professional-grade?",
+    a: "Yes. Every HEEM product is formulated to perform at professional barber-level. JV uses them on every client — that's the standard.",
   },
   {
-    q: "What payment methods do you accept?",
-    a: "Cash and all major cards are accepted. Payment is handled at the time of your appointment.",
+    q: "Can I also book a haircut with JV?",
+    a: "Absolutely. JV still cuts daily in San Diego. Book through Booksy at the link on the site or follow @jvcutzz on Instagram for availability.",
   },
   {
-    q: "Can I buy HEEM products?",
-    a: "Absolutely. The HEEM Collection — cape, razor, styling powder, aftershave, and more — is available online at jvcutzz.com and heembyjv.com.",
+    q: "How do I follow JV and HEEM?",
+    a: "Follow @jvcutzz on Instagram and subscribe to the JVCUTZZ YouTube channel for cut content, product drops, and behind-the-scenes content.",
   },
 ];
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-24 bg-surface">
+    <section id="faq" className="py-24">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,11 +43,11 @@ const FAQSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-3">
+          <p className="text-primary font-body text-sm tracking-[0.25em] uppercase mb-3">
             Questions?
           </p>
-          <h2 className="font-display text-5xl md:text-6xl">
-            <span className="text-gradient-gold">FAQ</span>
+          <h2 className="font-display text-4xl md:text-6xl font-bold">
+            <span className="text-gradient-violet">FAQ</span>
           </h2>
         </motion.div>
 

@@ -4,28 +4,15 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Gothic cross pattern background */}
-      <div className="absolute inset-0 opacity-[0.04]" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23a855f7' fill-rule='evenodd'%3E%3Cpath d='M36 30h8v-8h-2v-4h-4v4h-2v8zm0 20h8v8h-2v4h-4v-4h-2v-8zm-6-6v-8h-8v2h-4v4h4v2h8zm20 0v-8h8v2h4v4h-4v2h-8z'/%3E%3Ccircle cx='40' cy='40' r='3'/%3E%3Ccircle cx='40' cy='40' r='6' fill='none' stroke='%23a855f7' stroke-width='0.5'/%3E%3C/g%3E%3C/svg%3E")`,
-        backgroundSize: '80px 80px',
-      }} />
-
       <div className="absolute inset-0">
         <img
           src="https://heembyjv.com/cdn/shop/files/fixed_bundle_bf3d6c6d-9905-434a-8904-059f43ba4f87.jpg?v=1770447985&width=2000"
           alt="HEEM full product collection"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
       </div>
-
-      {/* Pattern overlay on top of image */}
-      <div className="absolute inset-0 opacity-[0.06]" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23a855f7' fill-rule='evenodd'%3E%3Cpath d='M36 30h8v-8h-2v-4h-4v4h-2v8zm0 20h8v8h-2v4h-4v-4h-2v-8zm-6-6v-8h-8v2h-4v4h4v2h8zm20 0v-8h8v2h4v4h-4v2h-8z'/%3E%3Ccircle cx='40' cy='40' r='3'/%3E%3Ccircle cx='40' cy='40' r='6' fill='none' stroke='%23a855f7' stroke-width='0.5'/%3E%3C/g%3E%3C/svg%3E")`,
-        backgroundSize: '80px 80px',
-      }} />
-
       <div className="absolute inset-0 bg-noise" />
 
       <div className="relative container pt-24 pb-12">

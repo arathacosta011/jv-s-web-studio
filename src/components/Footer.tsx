@@ -1,4 +1,5 @@
 import { Instagram, Youtube, ShoppingBag } from "lucide-react";
+import heemLogo from "@/assets/heem-logo.png";
 
 const Footer = () => {
   return (

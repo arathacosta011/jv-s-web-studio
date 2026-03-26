@@ -76,7 +76,7 @@ export const products: Product[] = [
     url: "https://heembyjv.com/products/the-heem-gel-wax",
     category: "styling",
     description: "The Heem Wax brings refreshing smell and feel to your hair. Whether you want a wet look or a firm look this is the right choice for you. The wax is like putty, it can be used to texture, hold, and style in many different ways. Made with No Alcohol.",
-    videoUrl: "https://www.youtube.com/watch?v=F0_T3kUPfaM",
+    videoUrl: "https://www.youtube.com/watch?v=UOr66Bv390k",
     usage: {
       whatItIs: "A versatile styling wax with a putty-like texture.",
       whatItDoes: "Creates wet look or firm hold. Textures, holds, and styles in multiple ways.",

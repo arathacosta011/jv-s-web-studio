@@ -1,44 +1,33 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="relative pt-20 pb-12 md:pt-28 md:pb-16 overflow-hidden">
+    <section className="pt-20 pb-4 md:pt-24 md:pb-6 relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
-      <div className="absolute inset-0" style={{
-        backgroundImage: "radial-gradient(ellipse at 50% 0%, hsl(270 85% 65% / 0.08) 0%, transparent 60%)",
-      }} />
-
       <div className="relative container text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[0.95] mb-4"
-        >
-          PREMIUM GROOMING
-          <br />
-          <span className="text-gradient-violet">BY JV</span>
-        </motion.h1>
-
         <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="font-body text-muted-foreground max-w-md mx-auto mb-8 text-base"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-primary font-body text-xs tracking-[0.3em] uppercase mb-2"
         >
-          Professional-grade hair products built by a barber, tested in the chair.
+          The Full Line
         </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
+        <motion.h1
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
+          transition={{ duration: 0.5 }}
+          className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold"
         >
-          <Button variant="hero" size="lg" asChild>
-            <a href="#collection">Shop Now</a>
-          </Button>
-        </motion.div>
+          SHOP <span className="text-gradient-violet">HEEM</span>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="text-muted-foreground mt-4 max-w-md mx-auto font-body leading-relaxed"
+        >
+          Every product built by JV, tested in the chair, and made for results.
+        </motion.p>
       </div>
     </section>
   );

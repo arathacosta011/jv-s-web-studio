@@ -17,22 +17,6 @@ const ProductCollection = () => {
       <div className="absolute top-1/2 left-0 w-[500px] h-[400px] rounded-full" style={{ background: "radial-gradient(ellipse, hsl(270 80% 58% / 0.10) 0%, transparent 70%)" }} />
 
       <div className="container relative">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <p className="text-primary font-body text-xs tracking-[0.3em] uppercase mb-4">
-            The Full Line
-          </p>
-          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold">
-            SHOP <span className="text-gradient-violet">HEEM</span>
-          </h2>
-          <p className="text-muted-foreground mt-6 max-w-md mx-auto font-body leading-relaxed">
-            Every product built by JV, tested in the chair, and made for results.
-          </p>
-        </motion.div>
 
         {categories.map((cat) => {
           const catProducts = products.filter((p) => p.category === cat.key);

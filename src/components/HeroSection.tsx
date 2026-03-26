@@ -69,7 +69,7 @@ const HeroSection = () => {
             className="flex items-center gap-8 mt-14 pt-8 border-t border-border"
           >
             {[
-              { value: "5.0★", label: "Rated" },
+              { value: "HEEM", label: "By JV" },
               { value: "100%", label: "Real Results" },
               { value: "Pro", label: "Grade" },
             ].map((stat) => (

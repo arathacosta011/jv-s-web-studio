@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ProductBenefits from "@/components/ProductBenefits";
 import ProductCollection from "@/components/ProductCollection";
-import VideoProductSection from "@/components/VideoProductSection";
+import WatchJVSection from "@/components/WatchJVSection";
 import TransformationsSection from "@/components/TransformationsSection";
 import AboutSection from "@/components/AboutSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -10,6 +10,7 @@ import BookingCTA from "@/components/BookingCTA";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import MobileBookingBar from "@/components/MobileBookingBar";
+import CartDrawer from "@/components/CartDrawer";
 
 const Index = () => {
   return (
@@ -18,7 +19,7 @@ const Index = () => {
       <HeroSection />
       <ProductBenefits />
       <ProductCollection />
-      <VideoProductSection />
+      <WatchJVSection />
       <TransformationsSection />
       <AboutSection />
       <TestimonialsSection />
@@ -26,6 +27,7 @@ const Index = () => {
       <FAQSection />
       <Footer />
       <MobileBookingBar />
+      <CartDrawer />
     </div>
   );
 };

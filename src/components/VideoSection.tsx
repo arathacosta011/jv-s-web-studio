@@ -6,42 +6,36 @@ const SHOP_URL = "https://heembyjv.com";
 
 const VideoSection = () => {
   return (
-    <section id="videos" className="py-24 bg-surface relative overflow-hidden">
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-glow-radial opacity-20" />
+    <section id="videos" className="py-32 bg-surface relative overflow-hidden">
+      <div className="absolute inset-0 bg-noise" />
+      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-glow-radial opacity-20" />
 
       <div className="container relative">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-primary font-body text-sm tracking-[0.25em] uppercase mb-3">
-            Watch It Work
-          </p>
-          <h2 className="font-display text-4xl md:text-6xl font-bold">
-            SEE <span className="text-gradient-violet">HEEM</span> IN ACTION
-          </h2>
-          <p className="text-muted-foreground mt-4 max-w-lg mx-auto font-body">
-            Watch JV use HEEM products in real cuts on the{" "}
-            <a
-              href="https://www.youtube.com/@JVCUTZZ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              JVCUTZZ YouTube channel
-            </a>.
-          </p>
-        </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <p className="text-primary font-body text-xs tracking-[0.3em] uppercase mb-4">
+            In Action
+          </p>
+          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold">
+            WATCH <span className="text-gradient-violet">HEEM</span> WORK
+          </h2>
+          <p className="text-muted-foreground mt-6 max-w-md mx-auto font-body leading-relaxed">
+            See JV use HEEM products on real clients. Every result starts with the right product.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="relative aspect-video rounded-2xl overflow-hidden border border-border shadow-card bg-card">
+          <div className="relative aspect-video rounded-2xl overflow-hidden border border-border/40 shadow-card bg-card">
             <iframe
               src="https://www.youtube.com/embed/?listType=user_uploads&list=JVCUTZZ"
               title="JVCUTZZ YouTube — HEEM Products in Action"
@@ -52,35 +46,35 @@ const VideoSection = () => {
             />
           </div>
 
-          {/* Product callout under video */}
+          {/* Product callout */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-8 bg-card border border-border rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+            className="mt-10 bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
           >
             <div>
-              <p className="font-display text-lg font-semibold">Like what you see?</p>
+              <p className="font-display text-xl font-bold mb-1">Like what you see?</p>
               <p className="text-sm text-muted-foreground font-body">
-                Every result in the video starts with HEEM products.
+                Every result in the video starts with HEEM.
               </p>
             </div>
-            <Button variant="hero" size="default" asChild>
+            <Button variant="hero" size="lg" className="shrink-0" asChild>
               <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">
                 Shop HEEM
               </a>
             </Button>
           </motion.div>
 
-          <div className="text-center mt-6">
+          <div className="text-center mt-8">
             <a
               href="https://www.youtube.com/@JVCUTZZ"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary hover:underline font-body text-sm"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-body text-sm"
             >
               <Play className="w-4 h-4" />
-              Watch more on YouTube
+              More on YouTube
             </a>
           </div>
         </motion.div>

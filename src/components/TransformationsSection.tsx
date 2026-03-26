@@ -17,7 +17,7 @@ const results = [
     label: "Detail Work — Clean Edges, Real Tools",
     tag: "Detail",
     products: "HEEM Razor · Texture Comb · ANTIFRIZZ",
-    productName: "The Heem Texture Comb",
+    productName: "The Heem ANTIFRIZZ",
   },
 ];
 

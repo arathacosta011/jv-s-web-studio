@@ -59,7 +59,7 @@ const WatchJVSection = () => {
             See It In Action
           </p>
           <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold">
-            WATCH JV <span className="text-gradient-violet">USE IT</span>
+            SEEN IN <span className="text-gradient-violet">ACTION</span>
           </h2>
           <p className="text-muted-foreground mt-6 max-w-lg mx-auto font-body leading-relaxed">
             Every product matched to a real video. See exactly how JV uses HEEM in the chair.

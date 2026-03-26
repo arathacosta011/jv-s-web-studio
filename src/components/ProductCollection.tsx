@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, ShoppingCart, Eye } from "lucide-react";
+import { ShoppingCart, Eye } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import ProductDetailModal, { type ProductDetail } from "@/components/ProductDetailModal";
 import { products, categories } from "@/data/products";
@@ -86,7 +86,6 @@ const ProductCard = ({
       transition={{ delay: index * 0.05, duration: 0.5 }}
       className="group bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl overflow-hidden shadow-card hover:border-primary/20 hover:shadow-violet transition-all duration-700"
     >
-      {/* Image — clickable */}
       <div
         className="relative overflow-hidden bg-secondary/30 cursor-pointer"
         onClick={onViewDetail}
@@ -105,12 +104,11 @@ const ProductCard = ({
         <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors duration-500 flex items-center justify-center">
           <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-body text-foreground bg-card/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-border/40">
             <Eye className="w-3 h-3 inline mr-1.5" />
-            View Details
+            View Product
           </span>
         </div>
       </div>
 
-      {/* Info */}
       <div className="p-5">
         <h4
           className="font-display text-base font-bold mb-2 leading-tight cursor-pointer hover:text-primary transition-colors"
@@ -125,24 +123,17 @@ const ProductCard = ({
           )}
         </div>
 
-        <div className="flex gap-2">
-          <Button
-            variant="hero"
-            size="sm"
-            className="flex-1"
-            onClick={() =>
-              addToCart({ name: product.name, price: product.price, image: product.image, url: product.url })
-            }
-          >
-            <ShoppingCart className="w-3.5 h-3.5" />
-            Add to Cart
-          </Button>
-          <Button variant="outline" size="sm" asChild>
-            <a href={product.url} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          </Button>
-        </div>
+        <Button
+          variant="hero"
+          size="sm"
+          className="w-full"
+          onClick={() =>
+            addToCart({ name: product.name, price: product.price, image: product.image, url: product.url })
+          }
+        >
+          <ShoppingCart className="w-3.5 h-3.5" />
+          Add to Cart
+        </Button>
       </div>
     </motion.div>
   );

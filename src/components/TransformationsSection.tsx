@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-
-const SHOP_URL = "https://heembyjv.com/collections/all";
+import { useCart } from "@/context/CartContext";
+import { ShoppingCart } from "lucide-react";
+import { products as allProducts } from "@/data/products";
 
 const results = [
   {
@@ -9,12 +10,14 @@ const results = [
     label: "Precision Lineup with THE HEEM RAZOR",
     tag: "Precision",
     products: "HEEM Razor · Aftershave Cologne · Styling Powder",
+    productName: "THE HEEM RAZOR",
   },
   {
     image: "https://heembyjv.com/cdn/shop/files/BB4C9DB6-0E0A-4D84-A0DE-6A64DE5FEE92.jpg?v=1772685669&width=1200",
     label: "Detail Work — Clean Edges, Real Tools",
     tag: "Detail",
     products: "HEEM Razor · Texture Comb · ANTIFRIZZ",
+    productName: "The Heem Texture Comb",
   },
 ];
 
@@ -44,40 +47,10 @@ const TransformationsSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {results.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2, duration: 0.7 }}
-              className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card shadow-card hover:shadow-violet transition-shadow duration-700"
-            >
-              <div className="overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.label}
-                  loading="lazy"
-                  width={900}
-                  height={900}
-                  className="w-full aspect-[4/5] object-cover transition-transform duration-1000 group-hover:scale-105"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-              <div className="absolute top-5 left-5">
-                <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[11px] text-primary uppercase tracking-widest font-body">
-                  {item.tag}
-                </span>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-8">
-                <p className="text-[10px] text-primary uppercase tracking-[0.2em] font-body mb-2">Products Used</p>
-                <p className="text-foreground font-display text-2xl font-bold mb-1">{item.label}</p>
-                <p className="text-xs text-muted-foreground font-body">{item.products}</p>
-              </div>
-            </motion.div>
+            <ResultCard key={i} item={item} index={i} />
           ))}
         </div>
 
-        {/* Real product lifestyle strip */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -110,11 +83,58 @@ const TransformationsSection = () => {
           className="text-center mt-14"
         >
           <Button variant="outline" size="lg" asChild>
-            <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">Shop the Products Behind the Results</a>
+            <a href="#collection">Shop the Products Behind the Results</a>
           </Button>
         </motion.div>
       </div>
     </section>
+  );
+};
+
+const ResultCard = ({ item, index }: { item: typeof results[0]; index: number }) => {
+  const { addToCart } = useCart();
+  const product = allProducts.find((p) => p.name === item.productName);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.2, duration: 0.7 }}
+      className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card shadow-card hover:shadow-violet transition-shadow duration-700"
+    >
+      <div className="overflow-hidden">
+        <img
+          src={item.image}
+          alt={item.label}
+          loading="lazy"
+          width={900}
+          height={900}
+          className="w-full aspect-[4/5] object-cover transition-transform duration-1000 group-hover:scale-105"
+        />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+      <div className="absolute top-5 left-5">
+        <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[11px] text-primary uppercase tracking-widest font-body">
+          {item.tag}
+        </span>
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 p-8">
+        <p className="text-[10px] text-primary uppercase tracking-[0.2em] font-body mb-2">Products Used</p>
+        <p className="text-foreground font-display text-2xl font-bold mb-1">{item.label}</p>
+        <p className="text-xs text-muted-foreground font-body mb-3">{item.products}</p>
+        {product && (
+          <Button
+            variant="hero"
+            size="sm"
+            onClick={() => addToCart({ name: product.name, price: product.price, image: product.image, url: product.url })}
+          >
+            <ShoppingCart className="w-3.5 h-3.5" />
+            Add to Cart
+          </Button>
+        )}
+      </div>
+    </motion.div>
   );
 };
 

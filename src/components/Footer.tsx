@@ -1,7 +1,5 @@
 import { Instagram, Youtube, ShoppingBag } from "lucide-react";
 
-const SHOP_URL = "https://heembyjv.com";
-
 const Footer = () => {
   return (
     <footer className="border-t border-border/40 bg-background py-20 relative">
@@ -21,7 +19,8 @@ const Footer = () => {
             <p className="font-display text-sm font-bold uppercase tracking-wider mb-5">Links</p>
             <div className="flex flex-col gap-3">
               {[
-                { label: "Shop HEEM", href: SHOP_URL, external: true },
+                { label: "Shop HEEM", href: "#collection" },
+                { label: "Watch JV Use It", href: "#video-product" },
                 { label: "Results", href: "#results" },
                 { label: "About JV", href: "#about" },
                 { label: "Book a Cut", href: "https://booksy.com/en-us/73285_jvkutzzz_barber-shop_san-diego", external: true },
@@ -59,12 +58,10 @@ const Footer = () => {
                 <Youtube className="w-4 h-4 text-primary/60" /> JVCUTZZ
               </a>
               <a
-                href={SHOP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#collection"
                 className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors font-body"
               >
-                <ShoppingBag className="w-4 h-4 text-primary/60" /> heembyjv.com
+                <ShoppingBag className="w-4 h-4 text-primary/60" /> Shop Collection
               </a>
             </div>
           </div>

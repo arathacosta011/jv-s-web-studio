@@ -31,9 +31,6 @@ const Navbar = () => {
               </span>
             )}
           </button>
-          <Button variant="hero" size="sm" asChild>
-            <a href="#collection">Shop Now</a>
-          </Button>
         </div>
 
         <div className="flex items-center gap-3 md:hidden">

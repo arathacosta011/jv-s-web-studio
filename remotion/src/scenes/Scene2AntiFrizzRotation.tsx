@@ -12,46 +12,98 @@ export const Scene2AntiFrizzRotation: React.FC<{ isVertical: boolean }> = ({ isV
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Slow zoom out revealing the full rotating bottle
-  const scale = interpolate(frame, [0, 120], [1.2, 1.0], { extrapolateRight: "clamp" });
+  // Bottle slow rotation simulation via horizontal drift + slight tilt
+  const bottleX = interpolate(frame, [0, 120], [-5, 5]);
+  const bottleRotate = interpolate(frame, [0, 120], [-3, 3]);
+  const bottleScale = interpolate(frame, [0, 30], [0.9, 1.0], { extrapolateRight: "clamp" });
   const opacity = interpolate(frame, [0, 15], [0, 1], { extrapolateRight: "clamp" });
 
-  // Subtle rotation simulation via pan
-  const panX = interpolate(frame, [0, 120], [-3, 3]);
+  // Purple glow pulse
+  const glowIntensity = interpolate(Math.sin(frame * 0.04), [-1, 1], [0.2, 0.45]);
 
   // Spec cards spring in
-  const spec1 = spring({ frame: frame - 35, fps, config: { damping: 16 } });
-  const spec2 = spring({ frame: frame - 50, fps, config: { damping: 16 } });
-  const spec3 = spring({ frame: frame - 65, fps, config: { damping: 16 } });
+  const spec1 = spring({ frame: frame - 40, fps, config: { damping: 16 } });
+  const spec2 = spring({ frame: frame - 55, fps, config: { damping: 16 } });
+  const spec3 = spring({ frame: frame - 70, fps, config: { damping: 16 } });
 
   const specs = [
     { label: "FRIZZ CONTROL", value: "24HR", spring: spec1 },
-    { label: "KERATIN INFUSED", value: "100%", spring: spec2 },
-    { label: "SHINE FACTOR", value: "10X", spring: spec3 },
+    { label: "KRAFINA ENRICHED", value: "100%", spring: spec2 },
+    { label: "CURL DEFINITION", value: "10X", spring: spec3 },
   ];
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#080504" }}>
-      <AbsoluteFill style={{ opacity, transform: `scale(${scale}) translateX(${panX}%)` }}>
+    <AbsoluteFill style={{ backgroundColor: "#050210" }}>
+      {/* Dark reflective surface */}
+      <AbsoluteFill
+        style={{
+          background: "linear-gradient(to bottom, #050210 0%, #0a0520 60%, #0f0830 100%)",
+        }}
+      />
+
+      {/* Purple ambient glow */}
+      <AbsoluteFill
+        style={{
+          background: `radial-gradient(ellipse at 50% 55%, rgba(128, 0, 255, ${glowIntensity}) 0%, transparent 55%)`,
+        }}
+      />
+
+      {/* Reflection line */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: isVertical ? "35%" : "25%",
+          left: "10%",
+          right: "10%",
+          height: 1,
+          background: "linear-gradient(to right, transparent, rgba(168, 85, 247, 0.3), transparent)",
+        }}
+      />
+
+      {/* Real bottle */}
+      <AbsoluteFill
+        style={{
+          justifyContent: "center",
+          alignItems: isVertical ? "center" : "center",
+          opacity,
+          transform: `scale(${bottleScale}) translateX(${bottleX}px) rotate(${bottleRotate}deg)`,
+        }}
+      >
         <Img
-          src={staticFile("images/antifrizz-rotating.jpg")}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          src={staticFile("images/antifrizz-real.png")}
+          style={{
+            height: isVertical ? "55%" : "75%",
+            objectFit: "contain",
+            filter: `drop-shadow(0 0 80px rgba(128, 0, 255, 0.5)) drop-shadow(0 30px 50px rgba(0,0,0,0.7))`,
+          }}
         />
       </AbsoluteFill>
 
-      {/* Ambient gold glow */}
+      {/* Bottle reflection (flipped, faded) */}
       <AbsoluteFill
         style={{
-          background: `radial-gradient(ellipse at ${isVertical ? "50% 70%" : "30% 60%"}, rgba(212, 175, 55, 0.06) 0%, transparent 60%)`,
+          justifyContent: "flex-end",
+          alignItems: "center",
+          opacity: 0.15,
+          transform: `scaleY(-1) translateY(${isVertical ? "25%" : "45%"})`,
         }}
-      />
+      >
+        <Img
+          src={staticFile("images/antifrizz-real.png")}
+          style={{
+            height: isVertical ? "55%" : "75%",
+            objectFit: "contain",
+            filter: "blur(2px)",
+          }}
+        />
+      </AbsoluteFill>
 
       {/* Spec cards */}
       <AbsoluteFill
         style={{
           justifyContent: isVertical ? "flex-end" : "center",
           alignItems: isVertical ? "center" : "flex-end",
-          padding: isVertical ? "0 40px 160px" : "0 80px 0 0",
+          padding: isVertical ? "0 40px 120px" : "0 80px 0 0",
         }}
       >
         <div
@@ -73,9 +125,9 @@ export const Scene2AntiFrizzRotation: React.FC<{ isVertical: boolean }> = ({ isV
               <div
                 style={{
                   fontFamily: "sans-serif",
-                  fontSize: isVertical ? 32 : 36,
+                  fontSize: isVertical ? 30 : 34,
                   fontWeight: 900,
-                  background: "linear-gradient(135deg, #d4af37, #f5d680)",
+                  background: "linear-gradient(135deg, #a855f7, #c084fc)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   lineHeight: 1,
@@ -88,7 +140,7 @@ export const Scene2AntiFrizzRotation: React.FC<{ isVertical: boolean }> = ({ isV
                   fontFamily: "sans-serif",
                   fontSize: 9,
                   letterSpacing: "0.3em",
-                  color: "rgba(255, 255, 255, 0.45)",
+                  color: "rgba(255, 255, 255, 0.4)",
                   marginTop: 6,
                 }}
               >

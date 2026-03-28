@@ -42,7 +42,7 @@ export const products: Product[] = [
     url: "https://heembyjv.com/products/heem-sea-salt-spray",
     category: "styling",
     description: "The HEEM Sea Salt Spray adds natural wave, texture, and body to any hair type. Spray it on damp or dry hair before styling for that beachy, lived-in movement that holds all day without stiffness.",
-    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
+    videoUrl: "https://www.youtube.com/watch?v=xiqtbk_PoTM",
     usage: {
       whatItIs: "A sea salt texturizing spray for natural wave and body.",
       whatItDoes: "Creates beachy, lived-in texture with lightweight hold.",
@@ -76,7 +76,7 @@ export const products: Product[] = [
     url: "https://heembyjv.com/products/the-heem-gel-wax",
     category: "styling",
     description: "The Heem Wax brings refreshing smell and feel to your hair. Whether you want a wet look or a firm look this is the right choice for you. The wax is like putty, it can be used to texture, hold, and style in many different ways. Made with No Alcohol.",
-    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
+    videoUrl: "https://www.youtube.com/watch?v=hADm7QRGaJs",
     usage: {
       whatItIs: "A versatile styling wax with a putty-like texture.",
       whatItDoes: "Creates wet look or firm hold. Textures, holds, and styles in multiple ways.",
@@ -109,7 +109,7 @@ export const products: Product[] = [
     url: "https://heembyjv.com/products/the-heem-aftershave-cologne",
     category: "styling",
     description: "The Heem aftershave cologne brings a refreshing feel and smell when sprayed. Apply after a fresh haircut or a clean shave for a crisp feeling. Made from high-quality, natural ingredients that are safe and gentle on the skin. Free from harsh chemicals.",
-    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
+    videoUrl: "https://www.youtube.com/watch?v=wBAfEpE0vm0",
     usage: {
       whatItIs: "A premium aftershave cologne spray.",
       whatItDoes: "Refreshes, soothes, and adds a clean scent after cutting.",
@@ -126,7 +126,7 @@ export const products: Product[] = [
     url: "https://heembyjv.com/products/heem-razor-holder",
     category: "tools",
     description: "Experience precision with the HEEM Straight Razor. Designed for barbers who demand clean, sharp results. Built for balance, durability, and professional performance.",
-    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
+    videoUrl: "https://www.youtube.com/watch?v=3kQ7YfJo5Qo",
     usage: {
       whatItIs: "A professional straight razor for precision detail work.",
       whatItDoes: "Delivers clean lineups, tapers, and finishing touches.",
@@ -176,7 +176,7 @@ export const products: Product[] = [
     url: "https://heembyjv.com/products/heem-texture-comb",
     category: "tools",
     description: "The comb JV uses to create his signature textured tops. Run through top sections to break up weight and add natural-looking movement. Goes hand in hand with the Styling Powder.",
-    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
+    videoUrl: "https://www.youtube.com/watch?v=LqGKjFHmN2g",
   },
   {
     name: "The Heem Crush",

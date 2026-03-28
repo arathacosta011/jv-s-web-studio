@@ -67,12 +67,12 @@ const ProductDetailModal = ({ product, onClose }: Props) => {
 
             <div className="grid md:grid-cols-2 gap-0">
               {/* Large Image */}
-              <div className="relative bg-secondary/20 p-6 md:p-10 flex items-center justify-center min-h-[350px] md:min-h-[450px]">
-                <div className="absolute inset-0 bg-glow-radial opacity-15" />
+              <div className="relative bg-secondary/20 flex items-center justify-center min-h-[400px] md:min-h-[550px]">
+                <div className="absolute inset-0 bg-glow-radial opacity-20" />
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="relative w-full max-w-[360px] md:max-w-[400px] aspect-square object-contain"
+                  className="relative w-full h-full object-contain p-4 md:p-8"
                 />
                 {product.originalPrice && (
                   <span className="absolute top-6 left-6 px-3 py-1 bg-primary/90 text-primary-foreground text-[10px] font-bold uppercase tracking-wider rounded-full">

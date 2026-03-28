@@ -80,6 +80,24 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         defaultProps={{ orientation: "vertical" as const }}
       />
+      <Composition
+        id="heem-cosmic-horizontal"
+        component={CosmicClashVideo}
+        durationInFrames={660}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={{ orientation: "horizontal" as const }}
+      />
+      <Composition
+        id="heem-cosmic-vertical"
+        component={CosmicClashVideo}
+        durationInFrames={660}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ orientation: "vertical" as const }}
+      />
     </>
   );
 };

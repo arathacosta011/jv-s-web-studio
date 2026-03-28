@@ -10,13 +10,23 @@ const ProductCollection = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductDetail | null>(null);
 
   return (
-    <section id="collection" className="py-16 relative overflow-hidden">
+    <section id="collection" className="py-24 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full" style={{ background: "radial-gradient(ellipse, hsl(270 85% 60% / 0.15) 0%, transparent 70%)" }} />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[400px] rounded-full" style={{ background: "radial-gradient(ellipse, hsl(280 80% 55% / 0.12) 0%, transparent 70%)" }} />
-      <div className="absolute top-1/2 left-0 w-[500px] h-[400px] rounded-full" style={{ background: "radial-gradient(ellipse, hsl(270 80% 58% / 0.10) 0%, transparent 70%)" }} />
 
       <div className="container relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <p className="text-primary font-body text-[11px] tracking-[0.3em] uppercase mb-3">
+            Full Catalog
+          </p>
+          <h2 className="font-display text-3xl md:text-5xl font-extrabold">
+            THE <span className="text-gradient-gold">COLLECTION</span>
+          </h2>
+        </motion.div>
 
         {categories.map((cat) => {
           const catProducts = products.filter((p) => p.category === cat.key);
@@ -28,10 +38,10 @@ const ProductCollection = () => {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="font-display text-2xl font-bold mb-8 flex items-center gap-4"
+                className="font-display text-xl font-bold mb-8 flex items-center gap-4"
               >
-                <span className="text-gradient-violet">{cat.label}</span>
-                <span className="h-px flex-1 bg-border/40" />
+                <span className="text-gradient-gold">{cat.label}</span>
+                <span className="h-px flex-1 bg-border/30" />
               </motion.h3>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -71,10 +81,10 @@ const ProductCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05, duration: 0.5 }}
-      className="group bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl overflow-hidden shadow-card hover:border-primary/20 hover:shadow-violet transition-all duration-700"
+      className="group bg-card/60 backdrop-blur-sm border border-border/30 rounded-2xl overflow-hidden shadow-card hover:border-primary/15 hover:shadow-gold transition-all duration-700"
     >
       <div
-        className="relative overflow-hidden bg-secondary/30 cursor-pointer"
+        className="relative overflow-hidden bg-secondary/20 cursor-pointer"
         onClick={onViewDetail}
       >
         <img
@@ -89,7 +99,7 @@ const ProductCard = ({
           </span>
         )}
         <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors duration-500 flex items-center justify-center">
-          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-body text-foreground bg-card/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-border/40">
+          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-body text-foreground bg-card/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-border/30">
             <Eye className="w-3 h-3 inline mr-1.5" />
             View Product
           </span>
@@ -104,7 +114,7 @@ const ProductCard = ({
           {product.name}
         </h4>
         <div className="flex items-baseline gap-2 mb-4">
-          <span className="font-display text-xl font-extrabold text-gradient-violet">{product.price}</span>
+          <span className="font-display text-xl font-extrabold text-gradient-gold">{product.price}</span>
           {product.originalPrice && (
             <span className="text-xs text-muted-foreground line-through">{product.originalPrice}</span>
           )}

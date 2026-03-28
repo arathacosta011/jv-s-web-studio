@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, ExternalLink, Play } from "lucide-react";
+import { ShoppingCart, Play } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import ProductDetailModal, { type ProductDetail } from "@/components/ProductDetailModal";
 import { products } from "@/data/products";
@@ -12,28 +12,28 @@ const videoProductPairings = [
     title: "The Cleanest Low Fade You'll See TODAY",
     productName: "HEEM Styling Powder",
     howUsed: "Applied as the final step after the low fade is cut and blow dried. JV taps the powder into his hands and works it through the top for volume and natural texture.",
-    result: "Hair goes from flat to full, textured, and styled — with zero visible product. The fade looks sharper because the top has shape.",
+    result: "Hair goes from flat to full, textured, and styled — with zero visible product.",
   },
   {
     videoId: "UOr66Bv390k",
     title: "Day in the Life of a Barber — Full Haircut Breakdown",
     productName: "The Heem Pomade 2.0",
-    howUsed: "JV applies the matte pomade for a clean, polished finish with medium hold. Worked through evenly for a sleek, non-shiny texture.",
-    result: "Refined, matte finish that looks natural all day. No shine, no crunch — just clean style.",
+    howUsed: "JV applies the matte pomade for a clean, polished finish with medium hold.",
+    result: "Refined, matte finish that looks natural all day. No shine, no crunch.",
   },
   {
     videoId: "hADm7QRGaJs",
     title: "Day in the Life of a Barber Making 6 Figures",
     productName: "The HEEM Wax",
-    howUsed: "JV scoops the putty-like wax, warms it between his palms, and works it through styled hair for a wet or firm textured hold depending on the client's look.",
-    result: "Flexible, reworkable hold that lasts all day. No alcohol, refreshing scent, and a versatile finish from slick to textured.",
+    howUsed: "JV scoops the putty-like wax, warms it between his palms, and works it through styled hair.",
+    result: "Flexible, reworkable hold that lasts all day. No alcohol, refreshing scent.",
   },
   {
     videoId: "zG1tWVw1vvw",
     title: "Low Fade Lineup — Precision Finishing",
     productName: "The Heem Aftershave Cologne",
-    howUsed: "Sprayed on the neck and hairline as the final touch after the cut. Clean, refreshing finish that soothes and smells premium.",
-    result: "Crisp, cool finish with a premium scent. No irritation, natural ingredients. The finishing signature.",
+    howUsed: "Sprayed on the neck and hairline as the final touch after the cut.",
+    result: "Crisp, cool finish with a premium scent. No irritation, natural ingredients.",
   },
 ];
 
@@ -44,24 +44,23 @@ const WatchJVSection = () => {
   const getProduct = (name: string) => products.find((p) => p.name === name);
 
   return (
-    <section id="video-product" className="py-32 bg-surface relative overflow-hidden">
+    <section id="video-product" className="py-24 md:py-32 bg-surface relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-glow-radial-strong opacity-20" />
 
       <div className="container relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <p className="text-primary font-body text-xs tracking-[0.3em] uppercase mb-4">
+          <p className="text-primary font-body text-[11px] tracking-[0.3em] uppercase mb-3">
             From the Chair
           </p>
-          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold">
-            SEEN IN <span className="text-gradient-violet">ACTION</span>
+          <h2 className="font-display text-3xl md:text-5xl font-extrabold">
+            SEEN IN <span className="text-gradient-gold">ACTION</span>
           </h2>
-          <p className="text-muted-foreground mt-6 max-w-lg mx-auto font-body leading-relaxed">
+          <p className="text-muted-foreground mt-5 max-w-lg mx-auto font-body leading-relaxed">
             Every product matched to a real video. See exactly how JV uses HEEM in the chair.
           </p>
         </motion.div>
@@ -78,9 +77,8 @@ const WatchJVSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl overflow-hidden shadow-card hover:border-primary/20 transition-all duration-700"
+                className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-2xl overflow-hidden shadow-card hover:border-primary/12 transition-all duration-700"
               >
-                {/* Video */}
                 <div className="relative aspect-video">
                   <iframe
                     src={`https://www.youtube.com/embed/${pairing.videoId}`}
@@ -92,19 +90,18 @@ const WatchJVSection = () => {
                   />
                 </div>
 
-                {/* Product pairing */}
                 <div className="p-6">
                   <div className="flex items-start gap-4 mb-4">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-16 h-16 object-contain rounded-xl bg-secondary/30 border border-border/30 shrink-0 p-1 cursor-pointer hover:border-primary/30 transition-colors"
+                      className="w-16 h-16 object-contain rounded-xl bg-secondary/30 border border-border/20 shrink-0 p-1 cursor-pointer hover:border-primary/20 transition-colors"
                       onClick={() => setSelectedProduct(product as ProductDetail)}
                     />
                     <div className="flex-1 min-w-0">
                       <p className="text-[10px] text-primary uppercase tracking-[0.2em] font-body mb-1">Product Used</p>
                       <h3 className="font-display text-lg font-bold leading-tight">{product.name}</h3>
-                      <p className="text-sm font-bold text-gradient-violet">{product.price}</p>
+                      <p className="text-sm font-bold text-gradient-gold">{product.price}</p>
                     </div>
                   </div>
 

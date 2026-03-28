@@ -1,29 +1,50 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ArrowDown } from "lucide-react";
 import heemLogo from "@/assets/heem-logo.png";
 
 const HeroSection = () => {
   return (
-    <section className="pt-24 pb-2 md:pt-28 md:pb-4 relative">
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+      {/* Cinematic background layers */}
       <div className="absolute inset-0 bg-noise" />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(ellipse at 50% 30%, hsl(43 100% 50% / 0.06) 0%, transparent 60%), radial-gradient(ellipse at 80% 70%, hsl(35 80% 45% / 0.04) 0%, transparent 50%)",
+        }}
+      />
+      {/* Top vignette */}
+      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background to-transparent" />
+      {/* Bottom vignette */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" />
 
-      <div className="relative container flex flex-col items-center text-center">
-        {/* SHOP HEEM heading */}
+      <div className="relative container flex flex-col items-center text-center px-6">
+        {/* Overline */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-primary font-body text-[11px] tracking-[0.4em] uppercase mb-8"
+        >
+          Premium Grooming by JV
+        </motion.p>
+
+        {/* SHOP + spinning HEEM logo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center gap-3 sm:gap-4 mb-2"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="flex items-center gap-3 sm:gap-4 mb-6"
         >
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">
             SHOP
           </h1>
-
-          {/* Spinning HEEM logo */}
           <div className="relative">
             <div
-              className="absolute inset-0 blur-[40px] opacity-40 scale-150"
-              style={{ background: "radial-gradient(circle, hsl(270 85% 60% / 0.6), transparent 70%)" }}
+              className="absolute inset-0 blur-[40px] opacity-30 scale-150"
+              style={{ background: "radial-gradient(circle, hsl(43 100% 50% / 0.4), transparent 70%)" }}
             />
             <motion.img
               src={heemLogo}
@@ -32,29 +53,50 @@ const HeroSection = () => {
               transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
               className="h-[7.5rem] sm:h-[9.6rem] md:h-[11.4rem] lg:h-[13.5rem] w-auto relative z-10"
               style={{
-                filter: "drop-shadow(0 0 20px hsl(270 85% 60% / 0.4))",
+                filter: "drop-shadow(0 0 20px hsl(43 100% 50% / 0.3))",
               }}
             />
           </div>
         </motion.div>
 
+        {/* Subheadline */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-muted-foreground font-body text-base md:text-lg max-w-md mx-auto mb-5"
+          transition={{ delay: 0.4 }}
+          className="text-muted-foreground font-body text-lg md:text-xl max-w-lg mx-auto mb-10 leading-relaxed"
         >
           Every product built by JV, tested in the chair, and made for results.
         </motion.p>
 
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.6 }}
+          className="flex flex-col sm:flex-row gap-4"
         >
           <Button variant="hero" size="lg" asChild>
-            <a href="#collection">Shop Now</a>
+            <a href="#collection">Shop the Collection</a>
           </Button>
+          <Button variant="outline" size="lg" asChild>
+            <a href="#about">Meet JV</a>
+          </Button>
+        </motion.div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ArrowDown className="w-5 h-5 text-muted-foreground/40" />
+          </motion.div>
         </motion.div>
       </div>
     </section>

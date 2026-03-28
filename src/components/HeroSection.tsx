@@ -1,19 +1,62 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import heemLogo from "@/assets/heem-logo.png";
+import { useState, useCallback, useRef } from "react";
+
+const videos = ["/videos/hero-bg.mp4", "/videos/hero-bg-2.mp4"];
 
 const HeroSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState<number | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const nextVideoRef = useRef<HTMLVideoElement>(null);
+
+  const handleVideoEnd = useCallback(() => {
+    const next = (currentIndex + 1) % videos.length;
+    setNextIndex(next);
+    // After crossfade completes, swap
+    setTimeout(() => {
+      setCurrentIndex(next);
+      setNextIndex(null);
+    }, 1200);
+  }, [currentIndex]);
+
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-      <video
+      {/* Current video */}
+      <motion.video
+        key={`current-${currentIndex}`}
+        ref={videoRef}
         autoPlay
         muted
-        loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
-        src="/videos/hero-bg.mp4"
+        src={videos[currentIndex]}
+        onEnded={handleVideoEnd}
+        animate={{ opacity: nextIndex !== null ? 0 : 1 }}
+        transition={{ duration: 1.2, ease: "easeInOut" }}
       />
+
+      {/* Next video (crossfade in) */}
+      <AnimatePresence>
+        {nextIndex !== null && (
+          <motion.video
+            key={`next-${nextIndex}`}
+            ref={nextVideoRef}
+            autoPlay
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            src={videos[nextIndex]}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            onEnded={handleVideoEnd}
+          />
+        )}
+      </AnimatePresence>
+
       <div className="absolute inset-0 bg-background/60" />
       <div className="absolute inset-0 bg-noise opacity-30" />
       <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background to-transparent" />

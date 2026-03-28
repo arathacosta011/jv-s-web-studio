@@ -10,7 +10,7 @@ const ProductCollection = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductDetail | null>(null);
 
   return (
-    <section id="collection" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="collection" className="py-12 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full" style={{ background: "radial-gradient(ellipse, hsl(270 85% 60% / 0.15) 0%, transparent 70%)" }} />
 
@@ -43,7 +43,7 @@ const ProductCollection = () => {
                 <span className="h-px flex-1 bg-border/40" />
               </motion.h3>
 
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+              <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-5">
                 {catProducts.map((product, i) => (
                   <ProductCard key={product.name} product={product} index={i} onViewDetail={() => setSelectedProduct(product as ProductDetail)} />
                 ))}
@@ -70,7 +70,7 @@ const ProductCard = ({ product, index, onViewDetail }: { product: (typeof produc
       className="group bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl overflow-hidden shadow-card hover:border-primary/20 hover:shadow-violet transition-all duration-700"
     >
       <div className="relative overflow-hidden bg-secondary/30 cursor-pointer" onClick={onViewDetail}>
-        <img src={product.image} alt={product.name} loading="lazy" className="w-full aspect-square object-contain p-4 transition-transform duration-700 group-hover:scale-105" />
+        <img src={product.image} alt={product.name} loading="lazy" className="w-full aspect-[4/3] md:aspect-square object-contain p-3 md:p-4 transition-transform duration-700 group-hover:scale-105" />
         {product.originalPrice && (
           <span className="absolute top-3 left-3 px-2.5 py-1 bg-primary/90 text-primary-foreground text-[10px] font-bold uppercase tracking-wider rounded-full">Sale</span>
         )}
@@ -81,11 +81,11 @@ const ProductCard = ({ product, index, onViewDetail }: { product: (typeof produc
         </div>
       </div>
 
-      <div className="p-5">
-        <h4 className="font-display text-base font-bold mb-2 leading-tight cursor-pointer hover:text-primary transition-colors" onClick={onViewDetail}>{product.name}</h4>
-        <div className="flex items-baseline gap-2 mb-4">
-          <span className="font-display text-xl font-extrabold text-gradient-violet">{product.price}</span>
-          {product.originalPrice && <span className="text-xs text-muted-foreground line-through">{product.originalPrice}</span>}
+      <div className="p-3 md:p-5">
+        <h4 className="font-display text-sm md:text-base font-bold mb-1 md:mb-2 leading-tight cursor-pointer hover:text-primary transition-colors" onClick={onViewDetail}>{product.name}</h4>
+        <div className="flex items-baseline gap-2 mb-2 md:mb-4">
+          <span className="font-display text-base md:text-xl font-extrabold text-gradient-violet">{product.price}</span>
+          {product.originalPrice && <span className="text-[10px] md:text-xs text-muted-foreground line-through">{product.originalPrice}</span>}
         </div>
         <Button variant="hero" size="sm" className="w-full" onClick={() => addToCart({ name: product.name, price: product.price, image: product.image, url: product.url })}>
           <ShoppingCart className="w-3.5 h-3.5" />Add to Cart

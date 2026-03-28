@@ -14,7 +14,7 @@ const FeaturedProducts = () => {
   const { addToCart } = useCart();
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section className="py-12 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
 
       <div className="container relative">
@@ -50,7 +50,7 @@ const FeaturedProducts = () => {
               transition={{ delay: i * 0.12, duration: 0.6 }}
               className="group relative bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl overflow-hidden shadow-card hover:border-primary/20 hover:shadow-violet transition-all duration-700"
             >
-              <div className="relative overflow-hidden bg-secondary/30 aspect-square">
+              <div className="relative overflow-hidden bg-secondary/30 aspect-[4/3] md:aspect-square">
                 <img
                   src={product.image}
                   alt={product.name}

@@ -32,7 +32,7 @@ const ProductCollection = () => {
           if (catProducts.length === 0) return null;
 
           return (
-            <div key={cat.key} className="mb-14 last:mb-0">
+            <div key={cat.key} className="mb-8 md:mb-14 last:mb-0">
               <motion.h3
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}

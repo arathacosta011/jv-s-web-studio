@@ -67,7 +67,7 @@ const ProductCard = ({ product, index, onViewDetail }: { product: (typeof produc
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.04, duration: 0.4 }}
-      className="group bg-card/80 backdrop-blur-sm border border-border/40 rounded-xl overflow-hidden shadow-card hover:border-primary/20 hover:shadow-violet transition-all duration-500"
+      className="group bg-card/80 backdrop-blur-sm border border-border/40 rounded-lg md:rounded-xl overflow-hidden shadow-card hover:border-primary/20 hover:shadow-violet transition-all duration-500"
     >
       {/* Bigger, tappable image area */}
       <div className="relative overflow-hidden bg-secondary/20 cursor-pointer" onClick={onViewDetail}>

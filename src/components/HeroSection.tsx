@@ -2,22 +2,20 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import heemLogo from "@/assets/heem-logo.png";
-import { useEffect, useRef } from "react";
+
 
 const HeroSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      video.play().catch(() => {});
-    }
-  }, []);
-
   return (
     <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
       <video
-        ref={videoRef}
+        ref={(el) => {
+          if (!el) return;
+          el.muted = true;
+          el.defaultMuted = true;
+          const play = () => el.play().catch(() => {});
+          el.addEventListener("canplay", play, { once: true });
+          play();
+        }}
         autoPlay
         muted
         loop
@@ -27,7 +25,7 @@ const HeroSection = () => {
         controls={false}
         disablePictureInPicture
         {...({ "webkit-playsinline": "true" } as any)}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover [&::-webkit-media-controls-start-playback-button]:hidden [&::-webkit-media-controls]:hidden"
         src="/videos/hero-bg.mp4"
       />
 

@@ -56,7 +56,7 @@ const ProductDetailModal = ({ product, onClose }: Props) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.97 }}
             transition={{ type: "spring", damping: 25, stiffness: 250 }}
-            className="fixed inset-4 sm:inset-8 md:inset-12 lg:inset-x-[15%] lg:inset-y-8 z-[70] bg-card border border-border/60 rounded-2xl overflow-y-auto shadow-card"
+            className="fixed inset-4 sm:inset-8 md:inset-12 lg:inset-x-[20%] lg:inset-y-[10%] z-[70] bg-card border border-border/60 rounded-2xl overflow-y-auto shadow-card"
           >
             <button
               onClick={onClose}
@@ -66,13 +66,13 @@ const ProductDetailModal = ({ product, onClose }: Props) => {
             </button>
 
             <div className="grid md:grid-cols-2 gap-0">
-              {/* Image */}
-              <div className="relative bg-secondary/20 p-8 md:p-12 flex items-center justify-center min-h-[300px]">
+              {/* Large Image */}
+              <div className="relative bg-secondary/20 p-6 md:p-10 flex items-center justify-center min-h-[350px] md:min-h-[450px]">
                 <div className="absolute inset-0 bg-glow-radial opacity-15" />
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="relative w-full max-w-[280px] aspect-square object-contain"
+                  className="relative w-full max-w-[360px] md:max-w-[400px] aspect-square object-contain"
                 />
                 {product.originalPrice && (
                   <span className="absolute top-6 left-6 px-3 py-1 bg-primary/90 text-primary-foreground text-[10px] font-bold uppercase tracking-wider rounded-full">
@@ -81,30 +81,26 @@ const ProductDetailModal = ({ product, onClose }: Props) => {
                 )}
               </div>
 
-              {/* Details */}
-              <div className="p-8 md:p-10">
-                <h2 className="font-display text-3xl md:text-4xl font-extrabold mb-2">{product.name}</h2>
-                <div className="flex items-baseline gap-3 mb-6">
+              {/* Details - Simplified */}
+              <div className="p-6 md:p-10 flex flex-col justify-center">
+                <h2 className="font-display text-2xl md:text-3xl font-extrabold mb-2">{product.name}</h2>
+                <div className="flex items-baseline gap-3 mb-5">
                   <span className="font-display text-3xl font-extrabold text-gradient-violet">{product.price}</span>
                   {product.originalPrice && (
                     <span className="text-sm text-muted-foreground line-through">{product.originalPrice}</span>
                   )}
                 </div>
 
-                <p className="text-muted-foreground font-body text-[15px] leading-[1.8] mb-8">
+                <p className="text-muted-foreground font-body text-[15px] leading-[1.8] mb-6">
                   {product.description}
                 </p>
 
                 {product.usage && (
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-3 mb-6">
                     <div className="divider-glow" />
                     {[
-                      { label: "What It Is", text: product.usage.whatItIs },
-                      { label: "What It Does", text: product.usage.whatItDoes },
                       { label: "How to Use", text: product.usage.howToUse },
-                      { label: "When to Use", text: product.usage.whenToUse },
                       { label: "The Result", text: product.usage.result },
-                      { label: "Why Trust It", text: product.usage.trust },
                     ].map((item) => (
                       <div key={item.label}>
                         <p className="text-[10px] text-primary uppercase tracking-[0.2em] font-body mb-1">{item.label}</p>

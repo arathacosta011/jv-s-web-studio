@@ -10,7 +10,7 @@ const ProductCollection = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductDetail | null>(null);
 
   return (
-    <section id="collection" className="py-12 md:py-24 relative overflow-hidden">
+    <section id="collection" className="py-10 md:py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full" style={{ background: "radial-gradient(ellipse, hsl(270 85% 60% / 0.15) 0%, transparent 70%)" }} />
 
@@ -19,7 +19,7 @@ const ProductCollection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <p className="text-primary font-body text-[11px] tracking-[0.3em] uppercase mb-3">Full Catalog</p>
           <h2 className="font-display text-3xl md:text-5xl font-extrabold">
@@ -32,18 +32,18 @@ const ProductCollection = () => {
           if (catProducts.length === 0) return null;
 
           return (
-            <div key={cat.key} className="mb-20 last:mb-0">
+            <div key={cat.key} className="mb-14 last:mb-0">
               <motion.h3
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="font-display text-xl font-bold mb-8 flex items-center gap-4"
+                className="font-display text-lg font-bold mb-6 flex items-center gap-4"
               >
                 <span className="text-gradient-violet">{cat.label}</span>
                 <span className="h-px flex-1 bg-border/40" />
               </motion.h3>
 
-              <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-5">
+              <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4">
                 {catProducts.map((product, i) => (
                   <ProductCard key={product.name} product={product} index={i} onViewDetail={() => setSelectedProduct(product as ProductDetail)} />
                 ))}
@@ -63,33 +63,52 @@ const ProductCard = ({ product, index, onViewDetail }: { product: (typeof produc
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 25 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.05, duration: 0.5 }}
-      className="group bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl overflow-hidden shadow-card hover:border-primary/20 hover:shadow-violet transition-all duration-700"
+      transition={{ delay: index * 0.04, duration: 0.4 }}
+      className="group bg-card/80 backdrop-blur-sm border border-border/40 rounded-xl overflow-hidden shadow-card hover:border-primary/20 hover:shadow-violet transition-all duration-500"
     >
-      <div className="relative overflow-hidden bg-secondary/30 cursor-pointer" onClick={onViewDetail}>
-        <img src={product.image} alt={product.name} loading="lazy" className="w-full aspect-[4/3] md:aspect-square object-contain p-3 md:p-4 transition-transform duration-700 group-hover:scale-105" />
+      {/* Bigger, tappable image area */}
+      <div className="relative overflow-hidden bg-secondary/20 cursor-pointer" onClick={onViewDetail}>
+        <img
+          src={product.image}
+          alt={product.name}
+          loading="lazy"
+          className="w-full aspect-square object-contain p-4 md:p-6 transition-transform duration-700 group-hover:scale-110"
+        />
         {product.originalPrice && (
-          <span className="absolute top-3 left-3 px-2.5 py-1 bg-primary/90 text-primary-foreground text-[10px] font-bold uppercase tracking-wider rounded-full">Sale</span>
+          <span className="absolute top-2.5 left-2.5 px-2 py-0.5 bg-primary/90 text-primary-foreground text-[9px] font-bold uppercase tracking-wider rounded-full">Sale</span>
         )}
-        <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors duration-500 flex items-center justify-center">
+        <div className="absolute inset-0 bg-background/0 group-hover:bg-background/15 transition-colors duration-400 flex items-center justify-center">
           <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-body text-foreground bg-card/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-border/40">
-            <Eye className="w-3 h-3 inline mr-1.5" />View Product
+            <Eye className="w-3 h-3 inline mr-1" />Details
           </span>
         </div>
       </div>
 
-      <div className="p-3 md:p-5">
-        <h4 className="font-display text-sm md:text-base font-bold mb-1 md:mb-2 leading-tight cursor-pointer hover:text-primary transition-colors" onClick={onViewDetail}>{product.name}</h4>
-        <div className="flex items-baseline gap-2 mb-2 md:mb-4">
-          <span className="font-display text-base md:text-xl font-extrabold text-gradient-violet">{product.price}</span>
-          {product.originalPrice && <span className="text-[10px] md:text-xs text-muted-foreground line-through">{product.originalPrice}</span>}
+      <div className="p-3 md:p-4">
+        <h4
+          className="font-display text-xs md:text-sm font-bold mb-1 leading-tight cursor-pointer hover:text-primary transition-colors truncate"
+          onClick={onViewDetail}
+        >
+          {product.name}
+        </h4>
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-baseline gap-1.5">
+            <span className="font-display text-sm md:text-lg font-extrabold text-gradient-violet">{product.price}</span>
+            {product.originalPrice && <span className="text-[9px] md:text-[10px] text-muted-foreground line-through">{product.originalPrice}</span>}
+          </div>
+          <Button
+            variant="hero"
+            size="sm"
+            className="h-8 px-3 text-[10px] md:text-xs"
+            onClick={() => addToCart({ name: product.name, price: product.price, image: product.image, url: product.url })}
+          >
+            <ShoppingCart className="w-3 h-3" />
+            <span className="hidden sm:inline">Add</span>
+          </Button>
         </div>
-        <Button variant="hero" size="sm" className="w-full" onClick={() => addToCart({ name: product.name, price: product.price, image: product.image, url: product.url })}>
-          <ShoppingCart className="w-3.5 h-3.5" />Add to Cart
-        </Button>
       </div>
     </motion.div>
   );

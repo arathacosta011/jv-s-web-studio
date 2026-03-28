@@ -13,21 +13,20 @@ export const ClashScene5Finale: React.FC<{ isVertical: boolean }> = ({ isVertica
   const { fps } = useVideoConfig();
 
   // BG
-  const bgFade = interpolate(frame, [0, 30], [0, 1], { extrapolateRight: "clamp" });
+  const bgFade = interpolate(frame, [0, 35], [0, 1], { extrapolateRight: "clamp" });
   const bgScale = interpolate(frame, [0, 210], [1.1, 1.0], { extrapolateRight: "clamp" });
 
-  // Products rise into hero
-  const waxSpring = spring({ frame: frame - 18, fps, config: { damping: 14, stiffness: 55 } });
-  const frizzSpring = spring({ frame: frame - 28, fps, config: { damping: 14, stiffness: 55 } });
+  // Products rise into hero position
+  const waxSpring = spring({ frame: frame - 18, fps, config: { damping: 16, stiffness: 50 } });
+  const frizzSpring = spring({ frame: frame - 28, fps, config: { damping: 16, stiffness: 50 } });
   const waxY = interpolate(waxSpring, [0, 1], [100, 0]);
   const frizzY = interpolate(frizzSpring, [0, 1], [100, 0]);
 
-  // Gentle breathing float
-  const breathe = Math.sin(frame * 0.018) * 4;
+  // Gentle breathing
+  const breathe = Math.sin(frame * 0.015) * 3;
 
-  // Dual glows
-  const blueGlow = interpolate(Math.sin(frame * 0.03), [-1, 1], [0.08, 0.22]);
-  const purpleGlow = interpolate(Math.sin(frame * 0.033 + 1.5), [-1, 1], [0.08, 0.22]);
+  // Gold glow pulse
+  const goldGlow = interpolate(Math.sin(frame * 0.03), [-1, 1], [0.08, 0.2]);
 
   // Text
   const brandSpring = spring({ frame: frame - 55, fps, config: { damping: 16 } });
@@ -38,18 +37,23 @@ export const ClashScene5Finale: React.FC<{ isVertical: boolean }> = ({ isVertica
   const barX = interpolate(frame, [100, 180], [-20, 120]);
 
   // Final subtle flash
-  const finalFlash = frame > 180 ? interpolate(frame, [180, 190, 210], [0, 0.1, 0], { extrapolateRight: "clamp" }) : 0;
+  const finalFlash = frame > 180 ? interpolate(frame, [180, 190, 210], [0, 0.08, 0], { extrapolateRight: "clamp" }) : 0;
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#030108" }}>
+    <AbsoluteFill style={{ backgroundColor: "#0a0806" }}>
       {/* BG */}
       <AbsoluteFill style={{ opacity: bgFade, transform: `scale(${bgScale})` }}>
         <Img src={staticFile("images/clash-finale-bg.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </AbsoluteFill>
 
-      {/* Dual ambient */}
+      {/* Dark overlay to push products forward */}
       <AbsoluteFill style={{
-        background: `radial-gradient(ellipse at 30% 50%, rgba(50, 100, 220, ${blueGlow}) 0%, transparent 35%), radial-gradient(ellipse at 70% 50%, rgba(128, 0, 255, ${purpleGlow}) 0%, transparent 35%)`,
+        background: "radial-gradient(ellipse at center, rgba(10,8,6,0.2) 0%, rgba(10,8,6,0.75) 65%)",
+      }} />
+
+      {/* Golden ambient glow */}
+      <AbsoluteFill style={{
+        background: `radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, ${goldGlow}) 0%, transparent 40%)`,
       }} />
 
       {/* Light bar sweep */}
@@ -58,7 +62,7 @@ export const ClashScene5Finale: React.FC<{ isVertical: boolean }> = ({ isVertica
         pointerEvents: "none",
       }} />
 
-      {/* Products side by side */}
+      {/* Products side by side — hero composition */}
       <AbsoluteFill style={{
         justifyContent: "center", alignItems: "center",
         flexDirection: isVertical ? "column" : "row",
@@ -73,7 +77,7 @@ export const ClashScene5Finale: React.FC<{ isVertical: boolean }> = ({ isVertica
           <Img src={staticFile("images/wax-cutout.png")} style={{
             height: isVertical ? 250 : 350,
             objectFit: "contain",
-            filter: `drop-shadow(0 0 45px rgba(50, 100, 220, 0.45)) drop-shadow(0 20px 40px rgba(0,0,0,0.6))`,
+            filter: `drop-shadow(0 0 45px rgba(212, 175, 55, 0.4)) drop-shadow(0 20px 40px rgba(0,0,0,0.7))`,
           }} />
         </div>
 
@@ -86,7 +90,7 @@ export const ClashScene5Finale: React.FC<{ isVertical: boolean }> = ({ isVertica
           <Img src={staticFile("images/antifrizz-cutout.png")} style={{
             height: isVertical ? 280 : 370,
             objectFit: "contain",
-            filter: `drop-shadow(0 0 45px rgba(128, 0, 255, 0.45)) drop-shadow(0 20px 40px rgba(0,0,0,0.6))`,
+            filter: `drop-shadow(0 0 45px rgba(212, 175, 55, 0.35)) drop-shadow(0 20px 40px rgba(0,0,0,0.7))`,
           }} />
         </div>
       </AbsoluteFill>
@@ -99,7 +103,7 @@ export const ClashScene5Finale: React.FC<{ isVertical: boolean }> = ({ isVertica
         <div style={{ textAlign: "center" }}>
           <div style={{
             fontFamily: "sans-serif", fontSize: isVertical ? 11 : 10,
-            letterSpacing: "0.6em", color: "rgba(255,255,255,0.35)",
+            letterSpacing: "0.6em", color: "rgba(212, 175, 55, 0.6)",
             textTransform: "uppercase",
             opacity: taglineSpring,
             transform: `translateY(${interpolate(taglineSpring, [0, 1], [10, 0])}px)`,
@@ -108,9 +112,12 @@ export const ClashScene5Finale: React.FC<{ isVertical: boolean }> = ({ isVertica
           </div>
           <div style={{
             fontFamily: "sans-serif", fontSize: isVertical ? 44 : 54, fontWeight: 900,
-            color: "white", letterSpacing: "-0.02em", marginTop: 8,
+            letterSpacing: "-0.02em", marginTop: 8,
             opacity: brandSpring,
             transform: `scale(${interpolate(brandSpring, [0, 1], [0.85, 1])})`,
+            background: "linear-gradient(180deg, #ffffff, #e8dcc8)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
           }}>
             CHOOSE YOUR WEAPON
           </div>
@@ -127,7 +134,7 @@ export const ClashScene5Finale: React.FC<{ isVertical: boolean }> = ({ isVertica
           letterSpacing: "0.35em", textTransform: "uppercase",
           opacity: ctaSpring,
           transform: `translateY(${interpolate(ctaSpring, [0, 1], [12, 0])}px)`,
-          background: "linear-gradient(90deg, #4a8cff, #a855f7)",
+          background: "linear-gradient(90deg, #d4af37, #f5e6a3)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
         }}>
@@ -137,7 +144,7 @@ export const ClashScene5Finale: React.FC<{ isVertical: boolean }> = ({ isVertica
 
       {/* Final flash */}
       <AbsoluteFill style={{
-        backgroundColor: "rgba(255,255,255,1)", opacity: finalFlash,
+        backgroundColor: "rgba(255,240,200,1)", opacity: finalFlash,
         pointerEvents: "none",
       }} />
     </AbsoluteFill>

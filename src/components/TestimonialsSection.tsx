@@ -16,41 +16,26 @@ const TestimonialsSection = () => {
   return (
     <section id="reviews" className="py-24 md:py-32 bg-surface relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-glow-radial opacity-15" />
 
       <div className="container relative">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-14"
-        >
-          <p className="text-primary font-body text-[11px] tracking-[0.3em] uppercase mb-3">
-            Real Reviews
-          </p>
-          <h2 className="font-display text-3xl md:text-5xl font-extrabold">
-            WHAT THEY <span className="text-gradient-gold">SAY</span>
-          </h2>
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+          <p className="text-primary font-body text-[11px] tracking-[0.3em] uppercase mb-3">Real Reviews</p>
+          <h2 className="font-display text-3xl md:text-5xl font-extrabold">WHAT THEY <span className="text-gradient-violet">SAY</span></h2>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
           {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05, duration: 0.5 }}
-              className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-2xl p-6 shadow-card relative hover:border-primary/12 transition-all duration-700 group"
+            <motion.div key={i} initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05, duration: 0.5 }}
+              className="bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl p-6 shadow-card relative hover:border-primary/15 transition-all duration-700 group"
             >
               <Quote className="w-8 h-8 text-primary/8 absolute top-4 right-4" />
               <div className="flex gap-0.5 mb-3">
-                {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star key={j} className="w-3 h-3 fill-primary text-primary" />
-                ))}
+                {Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="w-3 h-3 fill-primary text-primary" />)}
               </div>
               <p className="text-foreground/90 font-body text-sm leading-[1.7] mb-4">"{t.text}"</p>
               <div className="divider-glow mb-3" />
-              <p className="font-display text-sm font-bold text-gradient-gold">{t.name}</p>
+              <p className="font-display text-sm font-bold text-gradient-violet">{t.name}</p>
               <p className="text-[10px] text-muted-foreground font-body mt-1">{t.date} · {t.source}</p>
             </motion.div>
           ))}

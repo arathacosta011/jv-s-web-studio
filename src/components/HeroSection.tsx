@@ -6,22 +6,18 @@ import heemLogo from "@/assets/heem-logo.png";
 const HeroSection = () => {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-      {/* Cinematic background layers */}
       <div className="absolute inset-0 bg-noise" />
       <div
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "radial-gradient(ellipse at 50% 30%, hsl(43 100% 50% / 0.06) 0%, transparent 60%), radial-gradient(ellipse at 80% 70%, hsl(35 80% 45% / 0.04) 0%, transparent 50%)",
+            "radial-gradient(ellipse at 50% 30%, hsl(270 85% 60% / 0.08) 0%, transparent 60%), radial-gradient(ellipse at 80% 70%, hsl(280 80% 55% / 0.05) 0%, transparent 50%)",
         }}
       />
-      {/* Top vignette */}
       <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background to-transparent" />
-      {/* Bottom vignette */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" />
 
       <div className="relative container flex flex-col items-center text-center px-6">
-        {/* Overline */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,7 +27,6 @@ const HeroSection = () => {
           Premium Grooming by JV
         </motion.p>
 
-        {/* SHOP + spinning HEEM logo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -43,8 +38,8 @@ const HeroSection = () => {
           </h1>
           <div className="relative">
             <div
-              className="absolute inset-0 blur-[40px] opacity-30 scale-150"
-              style={{ background: "radial-gradient(circle, hsl(43 100% 50% / 0.4), transparent 70%)" }}
+              className="absolute inset-0 blur-[40px] opacity-40 scale-150"
+              style={{ background: "radial-gradient(circle, hsl(270 85% 60% / 0.6), transparent 70%)" }}
             />
             <motion.img
               src={heemLogo}
@@ -53,13 +48,12 @@ const HeroSection = () => {
               transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
               className="h-[7.5rem] sm:h-[9.6rem] md:h-[11.4rem] lg:h-[13.5rem] w-auto relative z-10"
               style={{
-                filter: "drop-shadow(0 0 20px hsl(43 100% 50% / 0.3))",
+                filter: "drop-shadow(0 0 20px hsl(270 85% 60% / 0.4))",
               }}
             />
           </div>
         </motion.div>
 
-        {/* Subheadline */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -69,7 +63,6 @@ const HeroSection = () => {
           Every product built by JV, tested in the chair, and made for results.
         </motion.p>
 
-        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -84,7 +77,6 @@ const HeroSection = () => {
           </Button>
         </motion.div>
 
-        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

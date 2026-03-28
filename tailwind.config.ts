@@ -51,10 +51,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-          deep: "hsl(var(--gold-deep))",
+        violet: {
+          DEFAULT: "hsl(var(--violet))",
+          glow: "hsl(var(--violet-glow))",
+          deep: "hsl(var(--violet-deep))",
         },
         surface: {
           DEFAULT: "hsl(var(--surface))",
@@ -91,10 +91,6 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
-        "marquee": {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -103,7 +99,6 @@ export default {
         shimmer: "shimmer 3s ease-in-out infinite",
         "pulse-glow": "pulse-glow 4s ease-in-out infinite",
         "float": "float 6s ease-in-out infinite",
-        "marquee": "marquee 30s linear infinite",
       },
     },
   },

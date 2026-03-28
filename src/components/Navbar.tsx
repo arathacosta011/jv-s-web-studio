@@ -18,13 +18,13 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-2xl border-b border-border/30 shadow-card"
+          ? "bg-background/60 backdrop-blur-2xl border-b border-border/50 shadow-card"
           : "bg-transparent"
       }`}
     >
       <div className="container flex items-center justify-between h-16">
         <a href="#" className="flex items-center">
-          <img src={heemLogo} alt="HEEM" className="h-12 w-auto" />
+          <img src={heemLogo} alt="HEEM" className="h-14 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -79,7 +79,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-2xl border-b border-border/30 pb-6">
+        <div className="md:hidden bg-background/95 backdrop-blur-2xl border-b border-border pb-6">
           <div className="container flex flex-col gap-4 pt-4">
             {[
               { label: "Shop", href: "#collection" },

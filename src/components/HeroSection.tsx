@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import heemLogo from "@/assets/heem-logo.png";
-import { useEffect, useRef } from "react";
+
 
 const HeroSection = () => {
   return (

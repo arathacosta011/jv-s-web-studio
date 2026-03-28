@@ -21,22 +21,21 @@ export const ClashVideo: React.FC<Props> = ({ orientation }) => {
   const isVertical = orientation === "vertical";
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#030108" }}>
-      {/* Persistent dual-color ambient bg */}
+    <AbsoluteFill style={{ backgroundColor: "#0a0806" }}>
+      {/* Persistent warm gold ambient bg */}
       <AbsoluteFill style={{
-        background: `radial-gradient(ellipse at ${30 + Math.sin(frame * 0.006) * 10}% ${50 + Math.cos(frame * 0.008) * 8}%, rgba(212, 175, 55, 0.06) 0%, transparent 50%), radial-gradient(ellipse at ${70 + Math.cos(frame * 0.007) * 10}% ${50 + Math.sin(frame * 0.005) * 8}%, rgba(128, 0, 255, 0.06) 0%, transparent 50%)`,
+        background: `radial-gradient(ellipse at ${50 + Math.sin(frame * 0.005) * 12}% ${50 + Math.cos(frame * 0.007) * 8}%, rgba(212, 175, 55, 0.04) 0%, transparent 55%)`,
       }} />
 
-      {/* Floating particles - gold and purple */}
+      {/* Floating gold particles */}
       <AbsoluteFill>
-        {Array.from({ length: 24 }).map((_, i) => {
+        {Array.from({ length: 20 }).map((_, i) => {
           const x = ((i * 137.5) % 100);
           const baseY = ((i * 73.7) % 100);
-          const speed = 0.1 + (i % 5) * 0.03;
+          const speed = 0.08 + (i % 5) * 0.025;
           const y = (baseY + frame * speed) % 120 - 10;
           const size = 1 + (i % 3);
-          const isGold = i % 2 === 0;
-          const opacity = interpolate(Math.sin(frame * 0.02 + i), [-1, 1], [0.03, 0.18]);
+          const opacity = interpolate(Math.sin(frame * 0.018 + i), [-1, 1], [0.02, 0.14]);
 
           return (
             <div
@@ -48,9 +47,7 @@ export const ClashVideo: React.FC<Props> = ({ orientation }) => {
                 width: size,
                 height: size,
                 borderRadius: "50%",
-                backgroundColor: isGold
-                  ? `rgba(212, 175, 55, ${opacity})`
-                  : `rgba(168, 85, 247, ${opacity})`,
+                backgroundColor: `rgba(212, 175, 55, ${opacity})`,
               }}
             />
           );
@@ -94,7 +91,7 @@ export const ClashVideo: React.FC<Props> = ({ orientation }) => {
 
       {/* Persistent vignette */}
       <AbsoluteFill style={{
-        background: "radial-gradient(ellipse at center, transparent 35%, rgba(3, 1, 8, 0.75) 100%)",
+        background: "radial-gradient(ellipse at center, transparent 35%, rgba(10, 8, 6, 0.75) 100%)",
         pointerEvents: "none",
       }} />
     </AbsoluteFill>

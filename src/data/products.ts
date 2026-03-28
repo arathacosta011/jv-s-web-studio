@@ -126,7 +126,7 @@ export const products: Product[] = [
     url: "https://heembyjv.com/products/heem-razor-holder",
     category: "tools",
     description: "Experience precision with the HEEM Straight Razor. Designed for barbers who demand clean, sharp results. Built for balance, durability, and professional performance.",
-    videoUrl: "https://www.youtube.com/watch?v=3kQ7YfJo5Qo",
+    videoUrl: "https://www.youtube.com/watch?v=UOr66Bv390k",
     usage: {
       whatItIs: "A professional straight razor for precision detail work.",
       whatItDoes: "Delivers clean lineups, tapers, and finishing touches.",

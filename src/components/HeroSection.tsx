@@ -74,8 +74,6 @@ const HeroSection = () => {
           <Button variant="hero" size="lg" asChild>
             <a href="#collection">Shop the Collection</a>
           </Button>
-            <a href="#about">Meet JV</a>
-          </Button>
         </motion.div>
 
         <motion.div

@@ -37,7 +37,7 @@ const ProductCollection = () => {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="font-display text-lg font-bold mb-6 flex items-center gap-4"
+                className="font-display text-base md:text-lg font-bold mb-4 md:mb-6 flex items-center gap-4"
               >
                 <span className="text-gradient-violet">{cat.label}</span>
                 <span className="h-px flex-1 bg-border/40" />

@@ -42,7 +42,7 @@ export const products: Product[] = [
     url: "https://heembyjv.com/products/heem-sea-salt-spray",
     category: "styling",
     description: "The HEEM Sea Salt Spray adds natural wave, texture, and body to any hair type. Spray it on damp or dry hair before styling for that beachy, lived-in movement that holds all day without stiffness.",
-    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
+    videoUrl: "https://www.youtube.com/watch?v=xiqtbk_PoTM",
     usage: {
       whatItIs: "A sea salt texturizing spray for natural wave and body.",
       whatItDoes: "Creates beachy, lived-in texture with lightweight hold.",

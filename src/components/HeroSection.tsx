@@ -6,14 +6,16 @@ import heemLogo from "@/assets/heem-logo.png";
 const HeroSection = () => {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-noise" />
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "radial-gradient(ellipse at 50% 30%, hsl(270 85% 60% / 0.08) 0%, transparent 60%), radial-gradient(ellipse at 80% 70%, hsl(280 80% 55% / 0.05) 0%, transparent 50%)",
-        }}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/videos/hero-bg.mp4"
       />
+      <div className="absolute inset-0 bg-background/60" />
+      <div className="absolute inset-0 bg-noise opacity-30" />
       <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" />
 
@@ -71,9 +73,6 @@ const HeroSection = () => {
         >
           <Button variant="hero" size="lg" asChild>
             <a href="#collection">Shop the Collection</a>
-          </Button>
-          <Button variant="outline" size="lg" asChild>
-            <a href="#about">Meet JV</a>
           </Button>
         </motion.div>
 

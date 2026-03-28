@@ -175,7 +175,6 @@ export const products: Product[] = [
     url: "https://heembyjv.com/products/heem-texture-comb",
     category: "tools",
     description: "The comb JV uses to create his signature textured tops. Run through top sections to break up weight and add natural-looking movement. Goes hand in hand with the Styling Powder.",
-    videoUrl: "https://www.youtube.com/watch?v=UOr66Bv390k",
   },
   {
     name: "The Heem Crush",

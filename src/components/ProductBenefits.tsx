@@ -27,26 +27,24 @@ const benefits = [
 
 const ProductBenefits = () => {
   return (
-    <section id="products" className="py-32 bg-surface relative overflow-hidden">
+    <section id="products" className="py-24 md:py-32 bg-surface relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-glow-radial opacity-25" />
 
       <div className="container relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
-          <p className="text-primary font-body text-xs tracking-[0.3em] uppercase mb-4">
+          <p className="text-primary font-body text-[11px] tracking-[0.3em] uppercase mb-3">
             Why HEEM
           </p>
-          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold">
-            NOT ANOTHER <span className="text-gradient-violet">PRODUCT LINE</span>
+          <h2 className="font-display text-3xl md:text-5xl font-extrabold mb-5">
+            NOT ANOTHER <span className="text-gradient-gold">PRODUCT LINE</span>
           </h2>
-          <p className="text-muted-foreground mt-6 max-w-lg mx-auto font-body leading-relaxed">
+          <p className="text-muted-foreground max-w-lg mx-auto font-body leading-relaxed">
             HEEM exists because JV needed products that actually perform in the chair.
-            Everything in the line earns its place — or it doesn't ship.
           </p>
         </motion.div>
 
@@ -58,9 +56,9 @@ const ProductBenefits = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="group bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl p-7 hover:border-primary/20 transition-all duration-700 shadow-card hover:shadow-violet text-center"
+              className="group bg-card/60 backdrop-blur-sm border border-border/30 rounded-2xl p-7 hover:border-primary/15 transition-all duration-700 shadow-card hover:shadow-gold text-center"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/8 border border-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/15 transition-colors duration-500">
+              <div className="w-12 h-12 rounded-xl bg-primary/8 border border-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/12 transition-colors duration-500">
                 <benefit.icon className="w-5 h-5 text-primary" />
               </div>
               <h3 className="font-display text-lg font-bold mb-2">{benefit.title}</h3>

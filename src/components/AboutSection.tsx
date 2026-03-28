@@ -15,13 +15,11 @@ const journey = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
+    <section id="about" className="py-24 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-glow-radial opacity-15" />
 
       <div className="container relative">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Main JV photo */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -29,30 +27,28 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="absolute -inset-6 bg-glow-radial opacity-20" />
-            <div className="relative rounded-2xl overflow-hidden border border-border/40 shadow-card">
+            <div className="relative rounded-2xl overflow-hidden border border-border/30 shadow-card">
               <img
                 src={jvLaptop}
                 alt="JV — founder of HEEM, working on the brand"
                 loading="lazy"
                 className="w-full aspect-[3/4] object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
             </div>
           </motion.div>
 
-          {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-primary font-body text-xs tracking-[0.3em] uppercase mb-4">
+            <p className="text-primary font-body text-[11px] tracking-[0.3em] uppercase mb-3">
               The Founder
             </p>
-            <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8">
-              MEET <span className="text-gradient-violet">JV</span>
+            <h2 className="font-display text-3xl md:text-5xl font-extrabold mb-8">
+              MEET <span className="text-gradient-gold">JV</span>
             </h2>
             <p className="text-muted-foreground font-body leading-[1.8] mb-6 text-[15px]">
               Jose Velasco — known as JV — started cutting hair as a kid, learning the craft before most people
@@ -94,7 +90,6 @@ const AboutSection = () => {
           </motion.div>
         </div>
 
-        {/* JV's Journey Grid */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -102,7 +97,7 @@ const AboutSection = () => {
           transition={{ duration: 0.8 }}
           className="mt-24"
         >
-          <p className="text-center text-primary font-body text-xs tracking-[0.3em] uppercase mb-10">
+          <p className="text-center text-primary font-body text-[11px] tracking-[0.3em] uppercase mb-10">
             The Journey
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -113,7 +108,7 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="group relative rounded-xl overflow-hidden border border-border/30 aspect-[3/4]"
+                className="group relative rounded-xl overflow-hidden border border-border/20 aspect-[3/4]"
               >
                 <img
                   src={item.image}

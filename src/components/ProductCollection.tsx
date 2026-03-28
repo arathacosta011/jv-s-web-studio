@@ -70,7 +70,7 @@ const ProductCard = ({ product, index, onViewDetail }: { product: (typeof produc
       className="group bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl overflow-hidden shadow-card hover:border-primary/20 hover:shadow-violet transition-all duration-700"
     >
       <div className="relative overflow-hidden bg-secondary/30 cursor-pointer" onClick={onViewDetail}>
-        <img src={product.image} alt={product.name} loading="lazy" className="w-full aspect-square object-contain p-4 transition-transform duration-700 group-hover:scale-105" />
+        <img src={product.image} alt={product.name} loading="lazy" className="w-full aspect-[4/3] md:aspect-square object-contain p-3 md:p-4 transition-transform duration-700 group-hover:scale-105" />
         {product.originalPrice && (
           <span className="absolute top-3 left-3 px-2.5 py-1 bg-primary/90 text-primary-foreground text-[10px] font-bold uppercase tracking-wider rounded-full">Sale</span>
         )}

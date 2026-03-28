@@ -109,7 +109,7 @@ export const products: Product[] = [
     url: "https://heembyjv.com/products/the-heem-aftershave-cologne",
     category: "styling",
     description: "The Heem aftershave cologne brings a refreshing feel and smell when sprayed. Apply after a fresh haircut or a clean shave for a crisp feeling. Made from high-quality, natural ingredients that are safe and gentle on the skin. Free from harsh chemicals.",
-    videoUrl: "https://www.youtube.com/watch?v=zG1tWVw1vvw",
+    videoUrl: "https://www.youtube.com/watch?v=wBAfEpE0vm0",
     usage: {
       whatItIs: "A premium aftershave cologne spray.",
       whatItDoes: "Refreshes, soothes, and adds a clean scent after cutting.",

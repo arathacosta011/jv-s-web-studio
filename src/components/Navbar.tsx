@@ -81,8 +81,6 @@ const Navbar = () => {
           <div className="container flex flex-col gap-4 pt-4">
             {[
               { label: "Shop", href: "#collection" },
-              { label: "About", href: "#about" },
-              { label: "Reviews", href: "#reviews" },
             ].map((link) => (
               <a
                 key={link.label}

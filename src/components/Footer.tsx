@@ -14,27 +14,13 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-8">
-            <div>
+          <div>
               <p className="text-[11px] text-primary uppercase tracking-[0.2em] font-body mb-4">Shop</p>
               <div className="space-y-3">
                 {["Styling", "Tools", "Bundles"].map((link) => (
                   <a key={link} href="#collection" className="block text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{link}</a>
                 ))}
               </div>
-            </div>
-            <div>
-              <p className="text-[11px] text-primary uppercase tracking-[0.2em] font-body mb-4">Info</p>
-              <div className="space-y-3">
-                {[
-                  { label: "About JV", href: "#about" },
-                  { label: "Reviews", href: "#reviews" },
-                  { label: "FAQ", href: "#faq" },
-                ].map((link) => (
-                  <a key={link.label} href={link.href} className="block text-sm text-muted-foreground hover:text-foreground transition-colors font-body">{link.label}</a>
-                ))}
-              </div>
-            </div>
           </div>
 
           <div className="md:text-right">

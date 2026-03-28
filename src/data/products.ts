@@ -76,7 +76,7 @@ export const products: Product[] = [
     url: "https://heembyjv.com/products/the-heem-gel-wax",
     category: "styling",
     description: "The Heem Wax brings refreshing smell and feel to your hair. Whether you want a wet look or a firm look this is the right choice for you. The wax is like putty, it can be used to texture, hold, and style in many different ways. Made with No Alcohol.",
-    videoUrl: "https://www.youtube.com/watch?v=hADm7QRGaJs",
+    videoUrl: "https://www.youtube.com/watch?v=JL1dCh3imQU",
     usage: {
       whatItIs: "A versatile styling wax with a putty-like texture.",
       whatItDoes: "Creates wet look or firm hold. Textures, holds, and styles in multiple ways.",
@@ -126,7 +126,6 @@ export const products: Product[] = [
     url: "https://heembyjv.com/products/heem-razor-holder",
     category: "tools",
     description: "Experience precision with the HEEM Straight Razor. Designed for barbers who demand clean, sharp results. Built for balance, durability, and professional performance.",
-    videoUrl: "https://www.youtube.com/watch?v=3kQ7YfJo5Qo",
     usage: {
       whatItIs: "A professional straight razor for precision detail work.",
       whatItDoes: "Delivers clean lineups, tapers, and finishing touches.",
@@ -176,7 +175,6 @@ export const products: Product[] = [
     url: "https://heembyjv.com/products/heem-texture-comb",
     category: "tools",
     description: "The comb JV uses to create his signature textured tops. Run through top sections to break up weight and add natural-looking movement. Goes hand in hand with the Styling Powder.",
-    videoUrl: "https://www.youtube.com/watch?v=LqGKjFHmN2g",
   },
   {
     name: "The Heem Crush",

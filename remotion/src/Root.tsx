@@ -2,6 +2,7 @@ import { Composition } from "remotion";
 import { MainVideo } from "./MainVideo";
 import { StylingVideo } from "./StylingVideo";
 import { AntiFrizzVideo } from "./AntiFrizzVideo";
+import { ClashVideo } from "./ClashVideo";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -55,6 +56,24 @@ export const RemotionRoot: React.FC = () => {
         id="heem-antifrizz-vertical"
         component={AntiFrizzVideo}
         durationInFrames={590}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ orientation: "vertical" as const }}
+      />
+      <Composition
+        id="heem-clash-horizontal"
+        component={ClashVideo}
+        durationInFrames={650}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={{ orientation: "horizontal" as const }}
+      />
+      <Composition
+        id="heem-clash-vertical"
+        component={ClashVideo}
+        durationInFrames={650}
         fps={30}
         width={1080}
         height={1920}

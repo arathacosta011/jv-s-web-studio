@@ -10,7 +10,7 @@ const ProductCollection = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductDetail | null>(null);
 
   return (
-    <section id="collection" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="collection" className="py-12 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full" style={{ background: "radial-gradient(ellipse, hsl(270 85% 60% / 0.15) 0%, transparent 70%)" }} />
 

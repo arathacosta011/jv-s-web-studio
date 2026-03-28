@@ -31,6 +31,9 @@ const HeroSection = () => {
         autoPlay
         muted
         playsInline
+        // @ts-ignore
+        webkit-playsinline="true"
+        preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
         src={videos[currentIndex]}
         onEnded={handleVideoEnd}
@@ -47,6 +50,9 @@ const HeroSection = () => {
             autoPlay
             muted
             playsInline
+            // @ts-ignore
+            webkit-playsinline="true"
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
             src={videos[nextIndex]}
             initial={{ opacity: 0 }}

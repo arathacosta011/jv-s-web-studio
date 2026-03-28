@@ -81,11 +81,11 @@ const ProductCard = ({ product, index, onViewDetail }: { product: (typeof produc
         </div>
       </div>
 
-      <div className="p-5">
-        <h4 className="font-display text-base font-bold mb-2 leading-tight cursor-pointer hover:text-primary transition-colors" onClick={onViewDetail}>{product.name}</h4>
-        <div className="flex items-baseline gap-2 mb-4">
-          <span className="font-display text-xl font-extrabold text-gradient-violet">{product.price}</span>
-          {product.originalPrice && <span className="text-xs text-muted-foreground line-through">{product.originalPrice}</span>}
+      <div className="p-3 md:p-5">
+        <h4 className="font-display text-sm md:text-base font-bold mb-1 md:mb-2 leading-tight cursor-pointer hover:text-primary transition-colors" onClick={onViewDetail}>{product.name}</h4>
+        <div className="flex items-baseline gap-2 mb-2 md:mb-4">
+          <span className="font-display text-base md:text-xl font-extrabold text-gradient-violet">{product.price}</span>
+          {product.originalPrice && <span className="text-[10px] md:text-xs text-muted-foreground line-through">{product.originalPrice}</span>}
         </div>
         <Button variant="hero" size="sm" className="w-full" onClick={() => addToCart({ name: product.name, price: product.price, image: product.image, url: product.url })}>
           <ShoppingCart className="w-3.5 h-3.5" />Add to Cart

@@ -29,7 +29,7 @@ const FeaturedProducts = () => {
               Best Sellers
             </p>
             <h2 className="font-display text-3xl md:text-5xl font-extrabold">
-              THE <span className="text-gradient-gold">ESSENTIALS</span>
+              THE <span className="text-gradient-violet">ESSENTIALS</span>
             </h2>
           </div>
           <a
@@ -48,10 +48,9 @@ const FeaturedProducts = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.6 }}
-              className="group relative bg-card/60 backdrop-blur-sm border border-border/30 rounded-2xl overflow-hidden shadow-card hover:border-primary/15 hover:shadow-gold transition-all duration-700"
+              className="group relative bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl overflow-hidden shadow-card hover:border-primary/20 hover:shadow-violet transition-all duration-700"
             >
-              {/* Image */}
-              <div className="relative overflow-hidden bg-secondary/20 aspect-square">
+              <div className="relative overflow-hidden bg-secondary/30 aspect-square">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -66,14 +65,13 @@ const FeaturedProducts = () => {
                 )}
               </div>
 
-              {/* Content */}
               <div className="p-6">
                 <h3 className="font-display text-lg font-bold mb-2">{product.name}</h3>
                 <p className="text-sm text-muted-foreground font-body line-clamp-2 mb-4 leading-relaxed">
                   {product.usage?.whatItDoes || product.description}
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="font-display text-2xl font-extrabold text-gradient-gold">
+                  <span className="font-display text-2xl font-extrabold text-gradient-violet">
                     {product.price}
                   </span>
                   <Button

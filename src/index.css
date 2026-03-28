@@ -6,51 +6,51 @@
 
 @layer base {
   :root {
-    --background: 240 6% 4%;
+    --background: 270 15% 3%;
     --foreground: 0 0% 96%;
 
-    --card: 240 5% 7%;
+    --card: 270 12% 6%;
     --card-foreground: 0 0% 96%;
 
-    --popover: 240 5% 7%;
+    --popover: 270 12% 6%;
     --popover-foreground: 0 0% 96%;
 
-    --primary: 43 100% 50%;
-    --primary-foreground: 0 0% 5%;
+    --primary: 270 85% 65%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 4% 10%;
-    --secondary-foreground: 0 0% 70%;
+    --secondary: 270 10% 10%;
+    --secondary-foreground: 0 0% 75%;
 
-    --muted: 240 4% 13%;
-    --muted-foreground: 240 3% 46%;
+    --muted: 270 10% 13%;
+    --muted-foreground: 270 5% 45%;
 
-    --accent: 43 90% 55%;
-    --accent-foreground: 0 0% 5%;
+    --accent: 280 75% 58%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 240 5% 12%;
-    --input: 240 5% 12%;
-    --ring: 43 100% 50%;
+    --border: 270 12% 12%;
+    --input: 270 12% 12%;
+    --ring: 270 85% 65%;
 
     --radius: 0.75rem;
 
-    --gold: 43 100% 50%;
-    --gold-light: 43 100% 65%;
-    --gold-deep: 35 80% 35%;
-    --surface: 240 5% 5%;
-    --surface-elevated: 240 4% 8%;
+    --violet: 270 85% 65%;
+    --violet-glow: 280 100% 72%;
+    --violet-deep: 270 60% 20%;
+    --surface: 270 12% 5%;
+    --surface-elevated: 270 10% 8%;
 
     --font-display: 'Outfit', sans-serif;
     --font-body: 'Space Grotesk', sans-serif;
 
-    --gradient-gold: linear-gradient(135deg, hsl(43 100% 50%), hsl(35 90% 45%));
-    --gradient-dark: linear-gradient(180deg, hsl(240 6% 4%), hsl(240 5% 7%));
-    --shadow-gold: 0 0 40px hsl(43 100% 50% / 0.15);
-    --shadow-card: 0 8px 40px hsl(0 0% 0% / 0.5);
-    --glow-gold: 0 0 100px 30px hsl(43 100% 50% / 0.04);
-    --glow-strong: 0 0 200px 60px hsl(43 100% 50% / 0.06);
+    --gradient-violet: linear-gradient(135deg, hsl(270 85% 65%), hsl(290 75% 52%));
+    --gradient-dark: linear-gradient(180deg, hsl(270 15% 3%), hsl(270 12% 6%));
+    --shadow-violet: 0 0 50px hsl(270 85% 65% / 0.25);
+    --shadow-card: 0 8px 40px hsl(0 0% 0% / 0.6);
+    --glow-violet: 0 0 120px 40px hsl(270 85% 65% / 0.06);
+    --glow-strong: 0 0 200px 60px hsl(270 85% 65% / 0.1);
   }
 }
 
@@ -62,6 +62,13 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
+    background-image:
+      radial-gradient(circle at 50% 5%, hsl(270 85% 60% / 0.22) 0%, transparent 55%),
+      radial-gradient(circle at 90% 40%, hsl(280 80% 55% / 0.16) 0%, transparent 50%),
+      radial-gradient(circle at 5% 50%, hsl(270 80% 58% / 0.14) 0%, transparent 50%),
+      radial-gradient(circle at 70% 80%, hsl(275 85% 55% / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 20% 95%, hsl(270 80% 60% / 0.13) 0%, transparent 45%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -71,27 +78,27 @@
 }
 
 @layer utilities {
-  .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(43 100% 55%), hsl(35 90% 50%));
+  .text-gradient-violet {
+    background: linear-gradient(135deg, hsl(270 85% 68%), hsl(290 85% 72%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .bg-gradient-gold {
-    background: var(--gradient-gold);
+  .bg-gradient-violet {
+    background: var(--gradient-violet);
   }
 
-  .shadow-gold {
-    box-shadow: var(--shadow-gold);
+  .shadow-violet {
+    box-shadow: var(--shadow-violet);
   }
 
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
 
-  .glow-gold {
-    box-shadow: var(--glow-gold);
+  .glow-violet {
+    box-shadow: var(--glow-violet);
   }
 
   .glow-strong {
@@ -99,33 +106,25 @@
   }
 
   .border-glow {
-    border-color: hsl(43 100% 50% / 0.12);
+    border-color: hsl(270 85% 65% / 0.15);
   }
 
   .bg-glow-radial {
-    background: radial-gradient(ellipse at center, hsl(43 100% 50% / 0.06) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, hsl(270 85% 65% / 0.1) 0%, transparent 70%);
   }
 
   .bg-glow-radial-strong {
-    background: radial-gradient(ellipse at center, hsl(43 100% 50% / 0.1) 0%, transparent 60%);
+    background: radial-gradient(ellipse at center, hsl(270 85% 65% / 0.15) 0%, transparent 60%);
   }
 
   .bg-noise {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
     background-repeat: repeat;
   }
 
   .divider-glow {
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(43 100% 50% / 0.2), transparent);
-  }
-
-  /* Keep backward compat */
-  .text-gradient-violet {
-    background: linear-gradient(135deg, hsl(43 100% 55%), hsl(35 90% 50%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: linear-gradient(90deg, transparent, hsl(270 85% 65% / 0.3), transparent);
   }
 }
 

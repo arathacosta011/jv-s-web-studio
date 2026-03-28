@@ -10,7 +10,7 @@ const ProductCollection = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductDetail | null>(null);
 
   return (
-    <section id="collection" className="py-10 md:py-20 relative overflow-hidden">
+    <section id="collection" className="py-6 md:py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full" style={{ background: "radial-gradient(ellipse, hsl(270 85% 60% / 0.15) 0%, transparent 70%)" }} />
 
@@ -19,10 +19,10 @@ const ProductCollection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-6 md:mb-10"
         >
-          <p className="text-primary font-body text-[11px] tracking-[0.3em] uppercase mb-3">Full Catalog</p>
-          <h2 className="font-display text-3xl md:text-5xl font-extrabold">
+          <p className="text-primary font-body text-[10px] md:text-[11px] tracking-[0.3em] uppercase mb-2 md:mb-3">Full Catalog</p>
+          <h2 className="font-display text-2xl md:text-5xl font-extrabold">
             THE <span className="text-gradient-violet">COLLECTION</span>
           </h2>
         </motion.div>
@@ -32,18 +32,18 @@ const ProductCollection = () => {
           if (catProducts.length === 0) return null;
 
           return (
-            <div key={cat.key} className="mb-14 last:mb-0">
+            <div key={cat.key} className="mb-8 md:mb-14 last:mb-0">
               <motion.h3
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="font-display text-lg font-bold mb-6 flex items-center gap-4"
+                className="font-display text-base md:text-lg font-bold mb-4 md:mb-6 flex items-center gap-4"
               >
                 <span className="text-gradient-violet">{cat.label}</span>
                 <span className="h-px flex-1 bg-border/40" />
               </motion.h3>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-4">
                 {catProducts.map((product, i) => (
                   <ProductCard key={product.name} product={product} index={i} onViewDetail={() => setSelectedProduct(product as ProductDetail)} />
                 ))}
@@ -67,7 +67,7 @@ const ProductCard = ({ product, index, onViewDetail }: { product: (typeof produc
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.04, duration: 0.4 }}
-      className="group bg-card/80 backdrop-blur-sm border border-border/40 rounded-xl overflow-hidden shadow-card hover:border-primary/20 hover:shadow-violet transition-all duration-500"
+      className="group bg-card/80 backdrop-blur-sm border border-border/40 rounded-lg md:rounded-xl overflow-hidden shadow-card hover:border-primary/20 hover:shadow-violet transition-all duration-500"
     >
       {/* Bigger, tappable image area */}
       <div className="relative overflow-hidden bg-secondary/20 cursor-pointer" onClick={onViewDetail}>
@@ -75,7 +75,7 @@ const ProductCard = ({ product, index, onViewDetail }: { product: (typeof produc
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="w-full aspect-[3/4] object-contain p-3 md:p-5 transition-transform duration-700 group-hover:scale-110"
+          className="w-full aspect-square md:aspect-[3/4] object-contain p-2 md:p-5 transition-transform duration-700 group-hover:scale-110"
         />
         {product.originalPrice && (
           <span className="absolute top-2.5 left-2.5 px-2 py-0.5 bg-primary/90 text-primary-foreground text-[9px] font-bold uppercase tracking-wider rounded-full">Sale</span>
@@ -87,7 +87,7 @@ const ProductCard = ({ product, index, onViewDetail }: { product: (typeof produc
         </div>
       </div>
 
-      <div className="p-3 md:p-4">
+      <div className="p-2 md:p-4">
         <h4
           className="font-display text-xs md:text-sm font-bold mb-1 leading-tight cursor-pointer hover:text-primary transition-colors truncate"
           onClick={onViewDetail}

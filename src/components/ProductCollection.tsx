@@ -87,7 +87,7 @@ const ProductCard = ({ product, index, onViewDetail }: { product: (typeof produc
         </div>
       </div>
 
-      <div className="p-3 md:p-4">
+      <div className="p-2 md:p-4">
         <h4
           className="font-display text-xs md:text-sm font-bold mb-1 leading-tight cursor-pointer hover:text-primary transition-colors truncate"
           onClick={onViewDetail}

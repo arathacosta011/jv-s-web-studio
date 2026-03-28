@@ -14,7 +14,7 @@ const FeaturedProducts = () => {
   const { addToCart } = useCart();
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section className="py-12 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-noise" />
 
       <div className="container relative">

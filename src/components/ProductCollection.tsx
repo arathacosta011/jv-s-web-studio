@@ -75,7 +75,7 @@ const ProductCard = ({ product, index, onViewDetail }: { product: (typeof produc
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="w-full aspect-[3/4] object-contain p-3 md:p-5 transition-transform duration-700 group-hover:scale-110"
+          className="w-full aspect-square md:aspect-[3/4] object-contain p-2 md:p-5 transition-transform duration-700 group-hover:scale-110"
         />
         {product.originalPrice && (
           <span className="absolute top-2.5 left-2.5 px-2 py-0.5 bg-primary/90 text-primary-foreground text-[9px] font-bold uppercase tracking-wider rounded-full">Sale</span>

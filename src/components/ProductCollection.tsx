@@ -43,7 +43,7 @@ const ProductCollection = () => {
                 <span className="h-px flex-1 bg-border/40" />
               </motion.h3>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-4">
                 {catProducts.map((product, i) => (
                   <ProductCard key={product.name} product={product} index={i} onViewDetail={() => setSelectedProduct(product as ProductDetail)} />
                 ))}

@@ -12,21 +12,28 @@ const HeroSection = () => {
           if (!el) return;
           el.muted = true;
           el.defaultMuted = true;
-          const play = () => el.play().catch(() => {});
-          el.addEventListener("canplay", play, { once: true });
-          play();
+          el.autoplay = true;
+          el.playsInline = true;
+          el.controls = false;
+          el.setAttribute("playsinline", "true");
+          el.setAttribute("webkit-playsinline", "true");
+          el.setAttribute("autoplay", "true");
+          el.setAttribute("muted", "true");
+          el.setAttribute("loop", "true");
+          el.setAttribute("controlslist", "nodownload nofullscreen noremoteplayback");
+          el.setAttribute("disablepictureinpicture", "true");
+          el.removeAttribute("controls");
+          el.play().catch(() => {});
         }}
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
-        poster=""
         controls={false}
         disablePictureInPicture
-        {...({ "webkit-playsinline": "true" } as any)}
-        className="absolute inset-0 w-full h-full object-cover [&::-webkit-media-controls-start-playback-button]:hidden [&::-webkit-media-controls]:hidden"
         src="/videos/hero-bg.mp4"
+        className="absolute inset-0 h-full w-full object-cover pointer-events-none [&::-webkit-media-controls]:hidden [&::-webkit-media-controls-start-playback-button]:hidden"
       />
 
       <div className="absolute inset-0 bg-background/60" />

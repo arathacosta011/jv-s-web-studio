@@ -1,67 +1,35 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import heemLogo from "@/assets/heem-logo.png";
-import { useState, useCallback, useRef } from "react";
-
-const videos = ["/videos/hero-bg.mp4", "/videos/hero-bg-2.mp4"];
+import { useEffect, useRef } from "react";
 
 const HeroSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [nextIndex, setNextIndex] = useState<number | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const nextVideoRef = useRef<HTMLVideoElement>(null);
 
-  const handleVideoEnd = useCallback(() => {
-    const next = (currentIndex + 1) % videos.length;
-    setNextIndex(next);
-    // After crossfade completes, swap
-    setTimeout(() => {
-      setCurrentIndex(next);
-      setNextIndex(null);
-    }, 1200);
-  }, [currentIndex]);
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch(() => {});
+    }
+  }, []);
 
   return (
     <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
-      {/* Current video */}
-      <motion.video
-        key={`current-${currentIndex}`}
+      <video
         ref={videoRef}
         autoPlay
         muted
+        loop
         playsInline
-        // @ts-ignore
-        webkit-playsinline="true"
         preload="auto"
+        poster=""
+        controls={false}
+        disablePictureInPicture
+        {...({ "webkit-playsinline": "true" } as any)}
         className="absolute inset-0 w-full h-full object-cover"
-        src={videos[currentIndex]}
-        onEnded={handleVideoEnd}
-        animate={{ opacity: nextIndex !== null ? 0 : 1 }}
-        transition={{ duration: 1.2, ease: "easeInOut" }}
+        src="/videos/hero-bg.mp4"
       />
-
-      {/* Next video (crossfade in) */}
-      <AnimatePresence>
-        {nextIndex !== null && (
-          <motion.video
-            key={`next-${nextIndex}`}
-            ref={nextVideoRef}
-            autoPlay
-            muted
-            playsInline
-            // @ts-ignore
-            webkit-playsinline="true"
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover"
-            src={videos[nextIndex]}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-            onEnded={handleVideoEnd}
-          />
-        )}
-      </AnimatePresence>
 
       <div className="absolute inset-0 bg-background/60" />
       <div className="absolute inset-0 bg-noise opacity-30" />

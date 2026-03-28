@@ -23,7 +23,7 @@ const HeroSection = () => {
   }, [currentIndex]);
 
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
       {/* Current video */}
       <motion.video
         key={`current-${currentIndex}`}

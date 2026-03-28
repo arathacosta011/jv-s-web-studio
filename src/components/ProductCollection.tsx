@@ -19,10 +19,10 @@ const ProductCollection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-6 md:mb-10"
         >
-          <p className="text-primary font-body text-[11px] tracking-[0.3em] uppercase mb-3">Full Catalog</p>
-          <h2 className="font-display text-3xl md:text-5xl font-extrabold">
+          <p className="text-primary font-body text-[10px] md:text-[11px] tracking-[0.3em] uppercase mb-2 md:mb-3">Full Catalog</p>
+          <h2 className="font-display text-2xl md:text-5xl font-extrabold">
             THE <span className="text-gradient-violet">COLLECTION</span>
           </h2>
         </motion.div>

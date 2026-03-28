@@ -3,6 +3,7 @@ import { MainVideo } from "./MainVideo";
 import { StylingVideo } from "./StylingVideo";
 import { AntiFrizzVideo } from "./AntiFrizzVideo";
 import { ClashVideo } from "./ClashVideo";
+import { CosmicClashVideo } from "./CosmicClashVideo";
 
 export const RemotionRoot: React.FC = () => {
   return (

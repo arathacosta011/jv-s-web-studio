@@ -2,6 +2,7 @@ import { Composition } from "remotion";
 import { MainVideo } from "./MainVideo";
 import { StylingVideo } from "./StylingVideo";
 import { AntiFrizzVideo } from "./AntiFrizzVideo";
+import { ClashVideo } from "./ClashVideo";
 
 export const RemotionRoot: React.FC = () => {
   return (
